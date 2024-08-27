@@ -6,13 +6,28 @@
 Welcome to first_control's documentation!
 =========================================
 
+**Contact:** Sébastien Vievard (vievard@naoj.org)
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Instrument presentation
    
    Intro
    instrument_principle
+   
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Procedures
+   
    instrument_setup
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Operating FIRST
+   
+   saving_images
+
 
 
 Indices and tables

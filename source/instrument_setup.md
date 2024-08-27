@@ -26,3 +26,15 @@ In  /home/first/src/firstctrl/FIRST_photom_control/ run :<br />
 |n_raw| number of frames averaged per position |
 |npt| number of samples per window side|
 |Target| name of your target|
+
+The coupling maps are saved in /home/first/Documents/FIRST-DATA/FIRST_PL/Optim_maps/
+They should look like this : 
+
+| On the bench          |  On-sky |
+:-------------------------:|:-------------------------:
+| ![](SK_processed.png)  |  ![](HIP84893_processed.png) |
+
+If the optimization is successful, the 2D gaussian fit will appear clearly on the coupling map image. If not, adjust the (x0,y0) corrdinates according to the coupling map shape (carreful, if the dark is bad, this process does not work properly).
+
+
+
