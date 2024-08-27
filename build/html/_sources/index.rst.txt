@@ -11,6 +11,8 @@ Welcome to first_control's documentation!
    :caption: Contents:
    
    Intro
+   instrument_principle
+   instrument_setup
 
 
 Indices and tables
