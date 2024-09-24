@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camera control &mdash; FIRST control</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Save data" href="saving_images.html" />
+    <link rel="prev" title="Instrument setup" href="instrument_setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            first_control
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Instrument presentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instrument_principle.html">Instrument presentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Procedures</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="instrument_setup.html">Instrument setup</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Operating FIRST</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Camera control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#change-camera-parameters">Change camera parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-data-type">Change data type</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="saving_images.html">Save data</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">first_control</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Camera control</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/camera_control.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="camera-control">
+<h1>Camera control<a class="headerlink" href="#camera-control" title="Link to this heading"></a></h1>
+<section id="change-camera-parameters">
+<h2>Change camera parameters<a class="headerlink" href="#change-camera-parameters" title="Link to this heading"></a></h2>
+<p>Enter in the tmux session <code class="docutils literal notranslate"><span class="pre">fircam_ctrl</span></code></p>
+<ul class="simple">
+<li><p>Change exposure time : <code class="docutils literal notranslate"><span class="pre">set_tint()</span></code></p></li>
+<li><p>Check exposure time : <code class="docutils literal notranslate"><span class="pre">get_tint()</span></code></p></li>
+<li><p>Change readout mode : <code class="docutils literal notranslate"><span class="pre">set_readout_mode()</span></code></p>
+<ul>
+<li><p>Options:</p>
+<ul>
+<li><p>‘FAST’ : &lt; 100 ms</p></li>
+<li><p>‘SLOW’ : &gt; 100 ms</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Change crop size : <code class="docutils literal notranslate"><span class="pre">set_camera_mode</span></code></p>
+<ul>
+<li><p>Options:</p>
+<ul>
+<li><p>‘FIRSTPL’ : For the regular Photonic Lantern mode</p></li>
+<li><p>‘FIRSTPLWFS’ : For the Wavefront sensing mode</p></li>
+<li><p>‘FIRSTPLSMF’ : For imaging of the SMF</p></li>
+<li><p>‘FULL’ : Full frame</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="change-data-type">
+<h2>Change data type<a class="headerlink" href="#change-data-type" title="Link to this heading"></a></h2>
+<p>In a terminal, execute the command line <code class="docutils literal notranslate"><span class="pre">first_datatype</span> <span class="pre">DATA_TYPE</span></code>,
+with DATA_TYPE being one of the following list:</p>
+<ul class="simple">
+<li><p>“ACQUISITION”</p></li>
+<li><p>“BIAS”</p></li>
+<li><p>“COMPARISON”</p></li>
+<li><p>“DARK”</p></li>
+<li><p>“DOMEFLAT”</p></li>
+<li><p>“FLAT”</p></li>
+<li><p>“FOCUSING”</p></li>
+<li><p>“OBJECT”</p></li>
+<li><p>“SKYFLAT”</p></li>
+<li><p>“STANDARD”</p></li>
+<li><p>“TEST”</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="instrument_setup.html" class="btn btn-neutral float-left" title="Instrument setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="saving_images.html" class="btn btn-neutral float-right" title="Save data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Sebastien Vievard.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

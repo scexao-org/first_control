@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instrument setup &mdash; FIRST control</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Camera control" href="camera_control.html" />
+    <link rel="prev" title="Instrument presentation" href="instrument_principle.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            first_control
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Instrument presentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instrument_principle.html">Instrument presentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Procedures</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Instrument setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#send-light-to-the-photonic-lantern">Send light to the Photonic Lantern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optimization-procedure">Optimization procedure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#start-the-process-of-flux-recording">1. Start the process of flux recording</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optimization">2. Optimization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#take-a-dark">2.1 Take a dark</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optimize-the-injection">2.2 Optimize the injection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Operating FIRST</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="camera_control.html">Camera control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saving_images.html">Save data</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">first_control</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Instrument setup</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/instrument_setup.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="instrument-setup">
+<h1>Instrument setup<a class="headerlink" href="#instrument-setup" title="Link to this heading"></a></h1>
+<section id="send-light-to-the-photonic-lantern">
+<h2>Send light to the Photonic Lantern<a class="headerlink" href="#send-light-to-the-photonic-lantern" title="Link to this heading"></a></h2>
+<p>On scexao2 computer, execute <br />
+<code class="docutils literal notranslate"><span class="pre">first_pickoff</span> <span class="pre">in</span></code></p>
+</section>
+<section id="optimization-procedure">
+<h2>Optimization procedure<a class="headerlink" href="#optimization-procedure" title="Link to this heading"></a></h2>
+<section id="start-the-process-of-flux-recording">
+<h3>1. Start the process of flux recording<a class="headerlink" href="#start-the-process-of-flux-recording" title="Link to this heading"></a></h3>
+<p>In  /home/first/src/firstctrl/FIRST_photom_control/ run :  <br />
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">first_pl_flux.py</span></code></p>
+</section>
+<section id="optimization">
+<h3>2. Optimization<a class="headerlink" href="#optimization" title="Link to this heading"></a></h3>
+<p>In  /home/first/src/firstctrl/FIRST_photom_control/ run :<br />
+<code class="docutils literal notranslate"><span class="pre">ipython</span></code>  <br />
+<code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">first_pl_optimization_injection_iocam.py</span></code><br /></p>
+<section id="take-a-dark">
+<h4>2.1 Take a dark<a class="headerlink" href="#take-a-dark" title="Link to this heading"></a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">pl_inj.acq_dark()</span></code></p>
+<ul class="simple">
+<li><p>Option :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vis_block</span> <span class="pre">=</span> <span class="pre">True/False</span></code> (adding the vis block in/out during dark measurement - check with VAMPIRES instrument when using this block)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="optimize-the-injection">
+<h4>2.2 Optimize the injection<a class="headerlink" href="#optimize-the-injection" title="Link to this heading"></a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">pl_inj.optimization_raster(x0=98997,y0=173268,window_step=1000,</span> <span class="pre">channel_opt=0,</span> <span class="pre">n_raw=10,</span> <span class="pre">npt=19,Target='Your_Target')</span></code></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Injection optimization parameters</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x0</p></td>
+<td><p>x coordinate of the center of the window scanned</p></td>
+</tr>
+<tr class="row-odd"><td><p>y0</p></td>
+<td><p>y coordinate of the center of the window scanned</p></td>
+</tr>
+<tr class="row-even"><td><p>window_step</p></td>
+<td><p>size (in step) of the window scanned</p></td>
+</tr>
+<tr class="row-odd"><td><p>n_raw</p></td>
+<td><p>number of frames averaged per position</p></td>
+</tr>
+<tr class="row-even"><td><p>npt</p></td>
+<td><p>number of samples per window side</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target</p></td>
+<td><p>name of your target</p></td>
+</tr>
+</tbody>
+</table>
+<p>The coupling maps are saved in /home/first/Documents/FIRST-DATA/FIRST_PL/Optim_maps/
+They should look like this :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>On the bench</p></th>
+<th class="head text-center"><p>On-sky</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="" src="_images/SK_processed.png" /></p></td>
+<td class="text-center"><p><img alt="" src="_images/HIP84893_processed.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>If the optimization is successful, the 2D gaussian fit will appear clearly on the coupling map image. If not, adjust the (x0,y0) corrdinates according to the coupling map shape (carreful, if the dark is bad, this process does not work properly).</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="instrument_principle.html" class="btn btn-neutral float-left" title="Instrument presentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="camera_control.html" class="btn btn-neutral float-right" title="Camera control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Sebastien Vievard.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
