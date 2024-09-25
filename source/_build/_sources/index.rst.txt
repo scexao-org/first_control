@@ -14,6 +14,7 @@ Welcome to first_control's documentation!
    
    Intro
    instrument_principle
+   instrument_performance
    
 
 .. toctree::
