@@ -14,6 +14,8 @@ In  /home/first/src/firstctrl/FIRST_photom_control/ run :  <br />
 In  /home/first/src/firstctrl/FIRST_photom_control/ run :<br />
 `ipython`  <br />
 `run first_pl_optimization_injection_iocam.py`<br />
+And then :<br />
+`pl_inj.whatyouwant`  <br />
 
 #### 2.1 Take a dark
 `pl_inj.acq_dark()`
