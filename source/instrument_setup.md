@@ -2,8 +2,15 @@
 
 ## Send light to the Photonic Lantern
 
-On scexao2 computer, execute <br />
+On scexao2 computer, to know the status of the pick off mirror: <br />
+`first_pickoff status`
+
+To put the pick off mirror in: <br />
 `first_pickoff in`
+
+To put the pick off mirror out: <br />
+`first_pickoff out`
+also on the scexao2 computer
 
 ## Optimization procedure
 ### 1. Start the process of flux recording

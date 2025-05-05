@@ -30,7 +30,13 @@ Welcome to first_control's documentation!
    camera_control
    saving_images
 
-
+.. toctree::
+   :maxdepth: 2
+   :caption: Using the FIRST pipeline
+   
+   pipeline_overview
+   calibration_recipies
+   image_reconstruction
 
 Indices and tables
 ==================
