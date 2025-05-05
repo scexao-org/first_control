@@ -2,7 +2,6 @@
 
 ## Send light to the Photonic Lantern
 
-
 ### 1. Pick off mirror
 On scexao2 computer, to know the status of the pick off mirror: <br />
 `first_pickoff status`
@@ -16,12 +15,15 @@ also on the scexao2 computer
 
 ### 2. Starting the supercontinuum source
 
-On scexao@scexso6 computer,  <br />
-
+On scexao@scexso2 computer,  <br />
+`superk power on`
 
 ### 3. flattening the DM
 
 On scexao@scexao6 computer,  <br />
+`dmflat`
+
+To center the PSF of PALILA, use ctrl+arrows.
 
 ## Optimization procedure
 ### 1. Start the process of flux recording
