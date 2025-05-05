@@ -2,6 +2,8 @@
 
 ## Send light to the Photonic Lantern
 
+
+### 1. Pick off mirror
 On scexao2 computer, to know the status of the pick off mirror: <br />
 `first_pickoff status`
 
@@ -11,6 +13,15 @@ To put the pick off mirror in: <br />
 To put the pick off mirror out: <br />
 `first_pickoff out`
 also on the scexao2 computer
+
+### 2. Starting the supercontinuum source
+
+On scexao@scexso6 computer,  <br />
+
+
+### 3. flattening the DM
+
+On scexao@scexao6 computer,  <br />
 
 ## Optimization procedure
 ### 1. Start the process of flux recording
