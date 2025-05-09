@@ -1,1 +1,4 @@
-# Camera control
+# Pipeline overview
+
+
+![](overview.png) 

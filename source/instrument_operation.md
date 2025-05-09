@@ -1,6 +1,8 @@
 # Instrument operation
 
-## 1. Moving photonic lantern
+# Moving the photonic lantern
+
+The Zaber motors move the lantern physically in the focal plane 
 
 Commands to check and set the Zaber position:
 ```
@@ -9,25 +11,15 @@ first_pl_inj x goto 98500
 first_pl_inj y goto 166500
 ```
 
-## 2. Stop Piezo Modulation
+# Changing camera parameters
 
-Commands to stop the piezo modulation and reset its position:
-```
-ld.switch_modulation_loop(False)
-ld.move_piezo(0, 0)
-```
-
-Note: There is approximately a factor of 10 between the piezo constraint units and the Zaber units.
-
-## 3. Change camera parameters
-Enter in the tmux session `fircam_ctrl`
-- Change exposure time : `set_tint()`
-- Check exposure time : `get_tint()`
-- Change readout mode : `set_readout_mode()` 
+- Change exposure time : `cam.set_tint()`
+- Check exposure time : `cam.get_tint()`
+- Change readout mode : `cam.set_readout_mode()` 
     - Options:
-        - 'FAST' : < 100 ms
-        - 'SLOW' : > 100 ms
-- Change crop size : `set_camera_mode`
+        - 'FAST' : < 150 ms
+        - 'SLOW' : > 150 ms
+- Change crop size : `cam.set_camera_mode`
     - Options:
         - 'FIRSTPL' : For the regular Photonic Lantern mode
         - 'FIRSTPLWFS' : For the Wavefront sensing mode
@@ -35,9 +27,13 @@ Enter in the tmux session `fircam_ctrl`
         - 'FULL' : Full frame
 
 
-### 4. Scanning with the Tip-Tilt
+# Acquiring a Cube / Scanning with the Tip-Tilt
 
-Modulation sequences:
+## Modulation sequences
+
+The modulation can be changed according to 2 pameters. The modulation pattern and the modulation scale
+
+Modulation patterns:
 - **Number 1**: Fixed position at zero
 - **Number 2**: 150 hexagonal (diameter = 16)
 - **Number 3**: 595 hexagonal (diameter = 31)
@@ -52,7 +48,8 @@ Note: Approximately 1 mas (milliarcsecond) per piezo constraint unit.
 
 `objX` and `objY` represent the position around the tip-tilt zero point. They are not necessarily the center of the photonic lantern.
 
-## 5. Acquiring a Cube
+
+## Acquisition command
 
 To acquire a cube of images:
 ```
@@ -66,7 +63,17 @@ To display the flux from the most recent FITS file:
 pls.ins.opti_flux()
 ```
 
-## 6. Closing down (End of the night)
+# Stoping Piezo Modulation
+
+Commands to stop the piezo modulation and reset its position:
+```
+ld.switch_modulation_loop(False)
+ld.move_piezo(0, 0)
+```
+
+Note: There is approximately a factor of 10 between the piezo constraint units and the Zaber units.
+
+# Closing down (End of the night)
 
 pls.eon == > to be done...
 

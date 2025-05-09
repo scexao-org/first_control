@@ -141,3 +141,44 @@ with DATA_TYPE being one of the following list:
 - "SKYFLAT"
 - "STANDARD"
 - "TEST"
+
+
+## Old optimization procedure (using Zabers)
+
+### 1. Start the process of flux recording
+In  /home/first/src/firstctrl/FIRST_photom_control/ run :  <br />
+`python first_pl_flux.py`
+
+### 2. Optimization
+In  /home/first/src/firstctrl/FIRST_photom_control/ run :<br />
+`ipython`  <br />
+`run first_pl_optimization_injection_iocam.py`<br />
+And then :<br />
+`pl_inj.whatyouwant`  <br />
+
+#### 2.1 Take a dark
+`pl_inj.acq_dark()`
+- Option :
+    - `vis_block = True/False` (adding the vis block in/out during dark measurement - check with VAMPIRES instrument when using this block)
+
+#### 2.2 Optimize the injection
+`pl_inj.optimization_raster(x0=98997,y0=173268,window_step=1000, channel_opt=0, n_raw=10, npt=19,Target='Your_Target')`
+
+|Injection optimization parameters||
+|-|-|
+| x0 | x coordinate of the center of the window scanned |
+| y0 | y coordinate of the center of the window scanned |
+|window_step| size (in step) of the window scanned |
+|n_raw| number of frames averaged per position |
+|npt| number of samples per window side|
+|Target| name of your target|
+
+The coupling maps are saved in /home/first/Documents/FIRST-DATA/FIRST_PL/Optim_maps/
+They should look like this : 
+
+| On the bench          |  On-sky |
+:-------------------------:|:-------------------------:
+| ![](SK_processed.png)  |  ![](HIP84893_processed.png) |
+
+If the optimization is successful, the 2D gaussian fit will appear clearly on the coupling map image. If not, adjust the (x0,y0) corrdinates according to the coupling map shape (carreful, if the dark is bad, this process does not work properly).
+

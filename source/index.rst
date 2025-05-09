@@ -30,7 +30,7 @@ Welcome to first_control's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Using the FIRST pipeline
+   :caption: Pipeline FIRST
    
    pipeline_overview
    recipies
