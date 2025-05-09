@@ -6,6 +6,8 @@
 `tmux new -s {session-name}`              # create a new tmux session with a new name  <br />
 `tmux rename -t {old-name} {new-name}`    # rename an existing session <br />
 
+Use Ctrl-b and then type d to detach from tmux
+
 # Pre-requisites
 
 ########## VERY IMPORTANT : 
