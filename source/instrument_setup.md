@@ -150,86 +150,13 @@ ncubes,
 `pls.ins.opti_flux()`			# Display flux from most recent fits file saved <br />
 
 
-
 ## End of the night calibration
 
 pls.eon == > to be done...
 
 
-## Old zaber positionning (moving the photonic lantern itself)
-
-
-### 2. Optimization
-In  /home/first/src/firstctrl/FIRST_photom_control/ run :<br />
-`ipython`  <br />
-`run first_pl_optimization_injection_iocam.py`<br />
-And then :<br />
-`pl_inj.whatyouwant`  <br />
-
-#### 2.1 Take a dark
-`pl_inj.acq_dark()` <br />
-- Option :
-    - `vis_block = True/False` (adding the vis block in/out during dark measurement - check with VAMPIRES instrument when using this block)
-
-#### 2.2 Optimize the injection
-`pl_inj.optimization_raster(x0=98997,y0=173268,window_step=1000, channel_opt=0, n_raw=10, npt=19,Target='Your_Target')` <br />
-
-|Injection optimization parameters||
-|-|-|
-| x0 | x coordinate of the center of the window scanned |
-| y0 | y coordinate of the center of the window scanned |
-|window_step| size (in step) of the window scanned |
-|n_raw| number of frames averaged per position |
-|npt| number of samples per window side|
-|Target| name of your target|
-
-The coupling maps are saved in /home/first/Documents/FIRST-DATA/FIRST_PL/Optim_maps/
-They should look like this : 
-
-| On the bench          |  On-sky |
-:-------------------------:|:-------------------------:
-| ![](SK_processed.png)  |  ![](HIP84893_processed.png) |
-
-If the optimization is successful, the 2D gaussian fit will appear clearly on the coupling map image. If not, adjust the (x0,y0) corrdinates according to the coupling map shape (carreful, if the dark is bad, this process does not work properly).
-
-## running the software to control the photonic lantern
-
-
-### 1. camera control 
-
-
-
-tmux a -t  <br />
-
-pls.acq.get_images(nimages={nb_pts}, ncubes, mod_sequence={mod_id}, mod_scale={size}, tint) # Take fits following a mod pattern <br />
-pls.ins.opti_flux()			# Display flux from most recent fits file saved <br />
-
-
-### 2. Modulation 
-
-scripts.upload_modulation_sequence(num_id, *pls.mod.{mode}()) <br />
-xmod, ymod = scripts.retrieve_modulation_sequence(num_id) <br />
-
-### 3. fitsLogger
-
-pls.bon.startup_fitslogger()		# To launch in python, Restart the fits logger <br />
-
-
 # Additional how-to
 
-
-############ Start Binning <br />
-
-~/src/firstctrl/FIRST_photom_control/    # Code location <br />
-run first_pl_crop.py                     # run the code containing the bin function <br />
-pl_b = firstpl_crop()                    # Initialize stuff <br />
-pl_b.run_binning(N=12)                   # run binning = 12 <br />
-
-first_tcp                                                    # tmux session for the UDP trnasfer  <br />
-milk-nettransmit 30201 -T 10.20.30.6 -s firstpl_bin -U       # start the UDP trasnfer <br />
-
-
-# SHM control
 
 ## SHM Stream control 
 
@@ -254,8 +181,3 @@ map_void          = np.zeros(({width}, {height}), dtype=np.float32) <br />
 
 camstart first                          # Starts the FIRST-PL Hamamatsu camera  <br />, old technique
 
-
-### 1. Start the process of flux recording
-In  /home/first/src/firstctrl/FIRST_photom_control/ run :  <br />
-`python first_pl_flux.py`
-????? old stuff from seb
