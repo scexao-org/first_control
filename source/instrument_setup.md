@@ -1,5 +1,3 @@
-
-
 # Working with tmux shell (for remote control)
 
 `tmux ls`                                 # list tmux sessions <br />
@@ -8,15 +6,15 @@
 `tmux new -s {session-name}`              # create a new tmux session with a new name  <br />
 `tmux rename -t {old-name} {new-name}`    # rename an existing session <br />
 
-# Pre-requisites (stuff that must be done)
-
-## 0. AFTER EACH COMPUTER REBOOT, RUN :
+# Pre-requisites
 
 ########## VERY IMPORTANT : 
+AFTER EACH COMPUTER REBOOT, RUN :
+
 `cc-rightafterreboot`
 
 
-# Starting scripts (stuff that must be running but shall be started only once)
+# Starting scripts (to be started only once)
 
 ## 1. starting the tip-tilt listener
 
@@ -34,7 +32,7 @@ ld ==> lantern driver (low level) <br />
 scripts ==> lantern driver (intermediate level, scripts only for electronics) <br />
 pls ==> photonic lantern scripts (high level) <br />
 
-# real time displays
+# Starting the real time displays
 
 ## 1. start camera viewer
 
@@ -45,7 +43,7 @@ pls ==> photonic lantern scripts (high level) <br />
 `firstpl_rtd_start`			# Start and load the SHM. Use rtd.vmax and rtd.vmin to control color scale on the display. <br />
 `firstpl_rtd_show`			# Display the live <br />
 
-# Starting scripts (stuff that must be running but shall be started at the beginning of the night)
+# Starting up (Beginning of the night)
 
 ## 1. startup electronics 
 
@@ -94,63 +92,80 @@ Changing the intensity,
 `src_flux waymore`
 `src_flux wayless`
 
-### 3. flattening the DM (in case of issue)
+### 3. Flattening the DM (in case of issues)
 
-On scexao@scexao6 computer,  <br />
+On the scexao@scexao6 computer:  
 `dmflat`
 
-To center the PSF of PALILA, use ctrl+arrows.
+To center the PSF of PALILA, use `Ctrl + Arrow Keys`.
 
-## Getting photons on the detector
+## Getting Photons on the Detector
 
-### 0. zaber to default position
+### 0. Zaber to Default Position
 
-first_pl_inj x status...
-first_pl_inj x goto 98500 ...
-first_pl_inj y goto 166500 ...
+Commands to check and set the Zaber position:
+```
+first_pl_inj x status
+first_pl_inj x goto 98500
+first_pl_inj y goto 166500
+```
 
-### arreter modulation du piezo
+### 1. Stop Piezo Modulation
 
-ld.switch_modulation_loop(Flase)
-ld.move_piezo(0,0)
+Commands to stop the piezo modulation and reset its position:
+```
+ld.switch_modulation_loop(False)
+ld.move_piezo(0, 0)
+```
 
-facteur 10 a peu pres enctre unite de contrainte des piezo et unite du zaber
+Note: There is approximately a factor of 10 between the piezo constraint units and the Zaber units.
 
+### 2. Camera Commands
 
-### 1. command to the camera
+Commands to set and change the DIT (Detector Integration Time):
+```
+cam.get_tint()
+cam.set_tint(0.01)  # Time in seconds
+```
 
-cam.get_tint
+Commands to change the readout mode:
+```
+cam.set_mode(mode)  # Mode can be FAST or SLOW
+cam.get_mode()      # Retrieve the current mode of the camera
+```
 
+### 3. Scanning with the Tip-Tilt
 
-### 2. scan with the tip-tilt
+Modulation sequences:
+- **Number 1**: Fixed position at zero
+- **Number 2**: 150 hexagonal (diameter = 16)
+- **Number 3**: 595 hexagonal (diameter = 31)
+- **Number 4**: 144 rectangular (length = 12)
+- **Number 5**: 625 axis (length = 25)
 
-mod squence:
-number 1 : 1 (fixed position at zero)
-number 2 : 150 hexagonal (diam =16)
-number 3 : 595 hexagonal (diam = 31)
-number 4 : 144 rectangular (length = 12)
-number 5 : 625 axis (length = 25)
+Modulation scale:
+- **Lantern modulation**: Scale = 30, sampled at 16 units
+- **Piezo modulation**: Scale = 1000, using sequence number 5 (length = 25)
 
-mod_scale : taille de la modulation (lantern va de -25 a +25 en unite de contraite).
-mod_scale pour avoir tout la lanterne : 30, echantillone a 16.
-mod_scale pour avoir tout le piezo : 1000, en utilisant number 5 (length = 25).
+Note: Approximately 1 mas (milliarcsecond) per piezo constraint unit.
 
+`objX` and `objY` represent the position around the tip-tilt zero point. They are not necessarily the center of the photonic lantern.
 
-A peu pres 1 mas par unite de jauge de contrainte.
+### 4. Acquiring a Cube
 
-objX, objY :  autour du zero du tip-tilt. Pas forcement le centre de la photonic lantern.
+To acquire a cube of images:
+```
+pls.acq.get_images(nimages, ncubes, mod_sequence, mod_scale, tint, objX, objY)
+```
+- `nimages`: Number of DITs (must be a factor of the sequence length)
+- `ncubes`: Number of cubes to acquire
 
-Acquerir un cube:
+To display the flux from the most recent FITS file:
+```
+pls.ins.opti_flux()
+```
 
-nimages, nombre de dit, doit etre un facteur de la longeur de la sequence.
-ncubes, 
-
-
-`pls.acq.get_images(nimages, ncubes, mod_sequence, mod_scale, tint, objX, objY)` # Take fits following a mod pattern <br />
-`pls.ins.opti_flux()`			# Display flux from most recent fits file saved <br />
-
-
-## End of the night calibration
+# Closing down (End of the night)
 
 pls.eon == > to be done...
 
@@ -179,5 +194,6 @@ map_void          = np.zeros(({width}, {height}), dtype=np.float32) <br />
 {shm_var}.set_data({image})  <br />
 
 
-camstart first                          # Starts the FIRST-PL Hamamatsu camera  <br />, old technique
+## Old way to start the camera
+camstart first                          # Starts the FIRST-PL Hamamatsu camera  <br />
 
