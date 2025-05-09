@@ -1,5 +1,3 @@
-# Instrument operation
-
 # Moving the photonic lantern
 
 The Zaber motors move the lantern physically in the focal plane 
