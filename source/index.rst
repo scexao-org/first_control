@@ -16,7 +16,6 @@ Welcome to first_control's documentation!
    instrument_principle
    instrument_performance
    
-
 .. toctree::
    :maxdepth: 2
    :caption: Procedures
@@ -27,16 +26,15 @@ Welcome to first_control's documentation!
    :maxdepth: 2
    :caption: Operating FIRST
    
-   camera_control
-   saving_images
+   instrument_operation
 
 .. toctree::
    :maxdepth: 2
    :caption: Using the FIRST pipeline
    
    pipeline_overview
-   calibration_recipies
-   image_reconstruction
+   recipies
+   utility_tools
 
 Indices and tables
 ==================

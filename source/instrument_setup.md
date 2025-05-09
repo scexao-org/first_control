@@ -68,11 +68,10 @@ and
 
 It must be run AFTER the `startup_fitslogger` command, since it requires parameters (including the name of the directory where the files are stored) <br />
 
-# Instrument setup
 
-## Send light to the Photonic Lantern
+# Send light to the Photonic Lantern
 
-### 1. Pick off mirror
+## 1. Pick off mirror
 On scexao2 computer, to know the status of the pick off mirror: <br />
 `first_pickoff status`
 
@@ -83,7 +82,7 @@ To put the pick off mirror out: <br />
 `first_pickoff out`
 also on the scexao2 computer
 
-### 2. Starting the supercontinuum source (for calibration)
+## 2. Starting the supercontinuum source (for calibration)
 
 On scexao@scexso2 computer,  <br />
 `superk power on`
@@ -92,82 +91,12 @@ Changing the intensity,
 `src_flux waymore`
 `src_flux wayless`
 
-### 3. Flattening the DM (in case of issues)
+## 3. Flattening the DM (in case of issues)
 
 On the scexao@scexao6 computer:  
 `dmflat`
 
 To center the PSF of PALILA, use `Ctrl + Arrow Keys`.
-
-## Getting Photons on the Detector
-
-### 0. Zaber to Default Position
-
-Commands to check and set the Zaber position:
-```
-first_pl_inj x status
-first_pl_inj x goto 98500
-first_pl_inj y goto 166500
-```
-
-### 1. Stop Piezo Modulation
-
-Commands to stop the piezo modulation and reset its position:
-```
-ld.switch_modulation_loop(False)
-ld.move_piezo(0, 0)
-```
-
-Note: There is approximately a factor of 10 between the piezo constraint units and the Zaber units.
-
-### 2. Camera Commands
-
-Commands to set and change the DIT (Detector Integration Time):
-```
-cam.get_tint()
-cam.set_tint(0.01)  # Time in seconds
-```
-
-Commands to change the readout mode:
-```
-cam.set_mode(mode)  # Mode can be FAST or SLOW
-cam.get_mode()      # Retrieve the current mode of the camera
-```
-
-### 3. Scanning with the Tip-Tilt
-
-Modulation sequences:
-- **Number 1**: Fixed position at zero
-- **Number 2**: 150 hexagonal (diameter = 16)
-- **Number 3**: 595 hexagonal (diameter = 31)
-- **Number 4**: 144 rectangular (length = 12)
-- **Number 5**: 625 axis (length = 25)
-
-Modulation scale:
-- **Lantern modulation**: Scale = 30, sampled at 16 units
-- **Piezo modulation**: Scale = 1000, using sequence number 5 (length = 25)
-
-Note: Approximately 1 mas (milliarcsecond) per piezo constraint unit.
-
-`objX` and `objY` represent the position around the tip-tilt zero point. They are not necessarily the center of the photonic lantern.
-
-### 4. Acquiring a Cube
-
-To acquire a cube of images:
-```
-pls.acq.get_images(nimages, ncubes, mod_sequence, mod_scale, tint, objX, objY)
-```
-- `nimages`: Number of DITs (must be a factor of the sequence length)
-- `ncubes`: Number of cubes to acquire
-
-To display the flux from the most recent FITS file:
-```
-pls.ins.opti_flux()
-```
-
-# Closing down (End of the night)
-
-pls.eon == > to be done...
 
 
 # Additional how-to
@@ -197,3 +126,18 @@ map_void          = np.zeros(({width}, {height}), dtype=np.float32) <br />
 ## Old way to start the camera
 camstart first                          # Starts the FIRST-PL Hamamatsu camera  <br />
 
+
+## Manually changing data type
+In a terminal, execute the command line `first_datatype DATA_TYPE`,
+with DATA_TYPE being one of the following list:
+- "ACQUISITION"
+- "BIAS"
+- "COMPARISON"
+- "DARK"
+- "DOMEFLAT"
+- "FLAT"
+- "FOCUSING"
+- "OBJECT"
+- "SKYFLAT"
+- "STANDARD"
+- "TEST"
