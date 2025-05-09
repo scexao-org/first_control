@@ -10,8 +10,7 @@ tmux rename -t {old-name} {new-name}    # rename an existing session
 
 # SHM control
 
-
-########## SHM Stream control 
+## SHM Stream control 
 
 milk-streamCTRL                                                     # Shows the various shared memories running (or not :p) 
 
@@ -26,7 +25,12 @@ FPS_FILTSTRING_NAME="FITS" milk-fpsCTR                              # Open the F
 milk-streamFITSlog -z {nimages} -c {ncubes} {shm_name} on           # Starts saving shm_name for ncubes of nimages  
 
 
-########### Display live reconstruction
+### Create a new SHM (python code)
+map_void          = np.zeros(({width}, {height}), dtype=np.float32)
+{shm_var}         = shm('{shm_name}', map_void, location=-1, shared=1)
+{shm_var}.set_data({image})
+
+### Display live reconstruction
 firstpl_rtd_start			# Start and load the SHM. Use rtd.vmax and rtd.vmin to control color scale on the display.
 firstpl_rtd_show			# Display the live
 
@@ -34,6 +38,7 @@ firstpl_rtd_show			# Display the live
 # Pre-requisites (stuff that must be running in the background)
 
 ## 0. AFTER EACH COMPUTER REBOOT, RUN :
+
 ########## VERY IMPORTANT : 
 `cc-rightafterreboot`
 
@@ -127,7 +132,7 @@ If the optimization is successful, the 2D gaussian fit will appear clearly on th
 
 ## running the software to control the photonic lantern
 
-### 0. Start the camera control 
+### 0. Start the script
 tmux a -t fircam_ctrl
 firstpl_controller_start
 
@@ -137,51 +142,31 @@ scripts ==> lantern driver (intermediate level, scripts only for electronics)
 pls ==> photonic lantern scripts (high level)
 
 
+### 1. camera control 
 
-# Additional how-to
-
-########### Create a new SHM (python code)
-map_void          = np.zeros(({width}, {height}), dtype=np.float32)
-{shm_var}         = shm('{shm_name}', map_void, location=-1, shared=1)
-{shm_var}.set_data({image})
-
-
-
-
-########### FIRST-PL CAMERA CONTROLS
 
 camstart first                          # Starts the FIRST-PL Hamamatsu camera 
 firstpl_controller_start		# Replace previous command (camstart first), starts camera, electronics etc
 firstcam -z 2 &                         # Start the camera viewer
 
-
-# Controls of the camera
 tmux a -t 
 
 pls.acq.get_images(nimages={nb_pts}, ncubes, mod_sequence={mod_id}, mod_scale={size}, tint) # Take fits following a mod pattern
 pls.ins.opti_flux()			# Display flux from most recent fits file saved
 
 
-/home/first/src/how-to.txt
-
-############ Modulation 
+### 2. Modulation 
 
 scripts.upload_modulation_sequence(num_id, *pls.mod.{mode}())
 xmod, ymod = scripts.retrieve_modulation_sequence(num_id)
 
-
-
-
-############ fitsLogger
+### 3. fitsLogger
 
 pls.bon.startup_fitslogger()		# To launch in python, Restart the fits logger
 
-############ TMUX SESSION
 
-tmux ls                                 # list tmux sessions
-tmux a -t {session-name}                # open a tmux session 
-tmux new -s {session-name}              # create a new tmux session with a new name 
-tmux rename -t {old-name} {new-name}    # rename an existing session
+
+# Additional how-to
 
 
 ############ Start Binning
