@@ -18,19 +18,19 @@ Welcome to first_control's documentation!
    
 .. toctree::
    :maxdepth: 2
-   :caption: Procedures
+   :caption: Startup
    
    instrument_setup
 
 .. toctree::
    :maxdepth: 2
-   :caption: Operating FIRST
+   :caption: Operations
    
    instrument_operation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Pipeline FIRST
+   :caption: Pipeline
    
    pipeline_overview
    recipies
