@@ -26,9 +26,39 @@ On scexao@scexao6 computer,  <br />
 To center the PSF of PALILA, use ctrl+arrows.
 
 ## Optimization procedure
+
+tmux ls                                 # list tmux sessions
+tmux list-session                       # list tmux sessions
+tmux a -t {session-name}                # open a tmux session 
+tmux new -s {session-name}              # create a new tmux session with a new name 
+tmux rename -t {old-name} {new-name}    # rename an existing session
+
+
+## 0. starting the tip-tilt listener
+tmux list-session
+tmux a -t firstpl_tt_listener
+puis:
+firstpl_tt_listener
+
+## 0. fusion of fits with modulation pattern:
+tmux firstpl_fitsmerger
+python fitsmod_merger.py /mnt/datazpool/PL/20250505/firstol/
+
+### 0. Start the camera control 
+tmux a -t fircam_ctrl
+firstpl_controller_start
+
+cam ==> camera
+ld ==> lantern driver (low level)
+scripts ==> lantern driver (intermediate level, scripts only for electronics)
+pls ==> photonic lantern scripts (high level)
+
+
 ### 1. Start the process of flux recording
 In  /home/first/src/firstctrl/FIRST_photom_control/ run :  <br />
 `python first_pl_flux.py`
+?????
+
 
 ### 2. Optimization
 In  /home/first/src/firstctrl/FIRST_photom_control/ run :<br />
@@ -65,3 +95,80 @@ If the optimization is successful, the 2D gaussian fit will appear clearly on th
 
 
 
+########## VERY IMPORTANT : 
+AFTER EACH COMPUTER REBOOT, RUN :
+cc-rightafterreboot
+
+########## SHM Stream control 
+
+milk-streamCTRL                                                     # Shows the various shared memories running (or not :p) 
+
+milk-streamFITSlog -d "/mnt/datazpool/PL/" -z 1000 firstpl pstart   # Start the saving process for the firstpl shm with a default of 1000 im per cube in the specifi
+ed directry
+FPS_FILTSTRING_NAME="FITS" milk-fpsCTR                              # Open the Fits logger
+ - In the fitslogger :
+    Shift+r : start the process
+    Ctrl+r : stop the process
+    Ctrl+e : kill the process 
+
+milk-streamFITSlog -z {nimages} -c {ncubes} {shm_name} on           # Starts saving shm_name for ncubes of nimages  
+
+
+########### Display live reconstruction
+firstpl_rtd_start			# Start and load the SHM. Use rtd.vmax and rtd.vmin to control color scale on the display.
+firstpl_rtd_show			# Display the live
+
+
+########### Create a new SHM (python code)
+map_void          = np.zeros(({width}, {height}), dtype=np.float32)
+{shm_var}         = shm('{shm_name}', map_void, location=-1, shared=1)
+{shm_var}.set_data({image})
+
+
+
+
+########### FIRST-PL CAMERA CONTROLS
+
+camstart first                          # Starts the FIRST-PL Hamamatsu camera 
+firstpl_controller_start		# Replace previous command (camstart first), starts camera, electronics etc
+firstcam -z 2 &                         # Start the camera viewer
+
+
+# Controls of the camera
+tmux a -t 
+
+pls.acq.get_images(nimages={nb_pts}, ncubes, mod_sequence={mod_id}, mod_scale={size}, tint) # Take fits following a mod pattern
+pls.ins.opti_flux()			# Display flux from most recent fits file saved
+
+
+/home/first/src/how-to.txt
+
+############ Modulation 
+
+scripts.upload_modulation_sequence(num_id, *pls.mod.{mode}())
+xmod, ymod = scripts.retrieve_modulation_sequence(num_id)
+
+
+
+
+############ fitsLogger
+
+pls.bon.startup_fitslogger()		# To launch in python, Restart the fits logger
+
+############ TMUX SESSION
+
+tmux ls                                 # list tmux sessions
+tmux a -t {session-name}                # open a tmux session 
+tmux new -s {session-name}              # create a new tmux session with a new name 
+tmux rename -t {old-name} {new-name}    # rename an existing session
+
+
+############ Start Binning
+
+~/src/firstctrl/FIRST_photom_control/    # Code location
+run first_pl_crop.py                     # run the code containing the bin function
+pl_b = firstpl_crop()                    # Initialize stuff
+pl_b.run_binning(N=12)                   # run binning = 12
+
+first_tcp                                                    # tmux session for the UDP trnasfer 
+milk-nettransmit 30201 -T 10.20.30.6 -s firstpl_bin -U       # start the UDP trasnfer
