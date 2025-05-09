@@ -2,38 +2,11 @@
 
 # Working with tmux shell (for remote control)
 
-tmux ls                                 # list tmux sessions
-tmux list-session                       # list tmux sessions
-tmux a -t {session-name}                # open a tmux session 
-tmux new -s {session-name}              # create a new tmux session with a new name 
-tmux rename -t {old-name} {new-name}    # rename an existing session
-
-# SHM control
-
-## SHM Stream control 
-
-milk-streamCTRL                                                     # Shows the various shared memories running (or not :p) 
-
-milk-streamFITSlog -d "/mnt/datazpool/PL/" -z 1000 firstpl pstart   # Start the saving process for the firstpl shm with a default of 1000 im per cube in the specifi
-ed directry
-FPS_FILTSTRING_NAME="FITS" milk-fpsCTR                              # Open the Fits logger
- - In the fitslogger :
-    Shift+r : start the process
-    Ctrl+r : stop the process
-    Ctrl+e : kill the process 
-
-milk-streamFITSlog -z {nimages} -c {ncubes} {shm_name} on           # Starts saving shm_name for ncubes of nimages  
-
-
-### Create a new SHM (python code)
-map_void          = np.zeros(({width}, {height}), dtype=np.float32)
-{shm_var}         = shm('{shm_name}', map_void, location=-1, shared=1)
-{shm_var}.set_data({image})
-
-### Display live reconstruction
-firstpl_rtd_start			# Start and load the SHM. Use rtd.vmax and rtd.vmin to control color scale on the display.
-firstpl_rtd_show			# Display the live
-
+tmux ls                                 # list tmux sessions <br />
+tmux list-session                       # list tmux sessions <br />
+tmux a -t {session-name}                # open a tmux session  <br />
+tmux new -s {session-name}              # create a new tmux session with a new name  <br />
+tmux rename -t {old-name} {new-name}    # rename an existing session <br />
 
 # Pre-requisites (stuff that must be running in the background)
 
@@ -104,12 +77,12 @@ And then :<br />
 `pl_inj.whatyouwant`  <br />
 
 #### 2.1 Take a dark
-`pl_inj.acq_dark()`
+`pl_inj.acq_dark()` <br />
 - Option :
     - `vis_block = True/False` (adding the vis block in/out during dark measurement - check with VAMPIRES instrument when using this block)
 
 #### 2.2 Optimize the injection
-`pl_inj.optimization_raster(x0=98997,y0=173268,window_step=1000, channel_opt=0, n_raw=10, npt=19,Target='Your_Target')`
+`pl_inj.optimization_raster(x0=98997,y0=173268,window_step=1000, channel_opt=0, n_raw=10, npt=19,Target='Your_Target')` <br />
 
 |Injection optimization parameters||
 |-|-|
@@ -133,48 +106,76 @@ If the optimization is successful, the 2D gaussian fit will appear clearly on th
 ## running the software to control the photonic lantern
 
 ### 0. Start the script
-tmux a -t fircam_ctrl
-firstpl_controller_start
+tmux a -t fircam_ctrl <br />
+firstpl_controller_start <br />
 
-cam ==> camera
-ld ==> lantern driver (low level)
-scripts ==> lantern driver (intermediate level, scripts only for electronics)
-pls ==> photonic lantern scripts (high level)
+cam ==> camera <br />
+ld ==> lantern driver (low level) <br />
+scripts ==> lantern driver (intermediate level, scripts only for electronics) <br />
+pls ==> photonic lantern scripts (high level) <br />
 
 
 ### 1. camera control 
 
 
-camstart first                          # Starts the FIRST-PL Hamamatsu camera 
-firstpl_controller_start		# Replace previous command (camstart first), starts camera, electronics etc
-firstcam -z 2 &                         # Start the camera viewer
+camstart first                          # Starts the FIRST-PL Hamamatsu camera  <br />
+firstpl_controller_start		# Replace previous command (camstart first), starts camera, electronics etc <br />
+firstcam -z 2 &                         # Start the camera viewer <br />
 
-tmux a -t 
+tmux a -t  <br />
 
-pls.acq.get_images(nimages={nb_pts}, ncubes, mod_sequence={mod_id}, mod_scale={size}, tint) # Take fits following a mod pattern
-pls.ins.opti_flux()			# Display flux from most recent fits file saved
+pls.acq.get_images(nimages={nb_pts}, ncubes, mod_sequence={mod_id}, mod_scale={size}, tint) # Take fits following a mod pattern <br />
+pls.ins.opti_flux()			# Display flux from most recent fits file saved <br />
 
 
 ### 2. Modulation 
 
-scripts.upload_modulation_sequence(num_id, *pls.mod.{mode}())
-xmod, ymod = scripts.retrieve_modulation_sequence(num_id)
+scripts.upload_modulation_sequence(num_id, *pls.mod.{mode}()) <br />
+xmod, ymod = scripts.retrieve_modulation_sequence(num_id) <br />
 
 ### 3. fitsLogger
 
-pls.bon.startup_fitslogger()		# To launch in python, Restart the fits logger
+pls.bon.startup_fitslogger()		# To launch in python, Restart the fits logger <br />
 
+
+### 4. Display live reconstruction
+firstpl_rtd_start			# Start and load the SHM. Use rtd.vmax and rtd.vmin to control color scale on the display. <br />
+firstpl_rtd_show			# Display the live <br />
 
 
 # Additional how-to
 
 
-############ Start Binning
+############ Start Binning <br />
 
-~/src/firstctrl/FIRST_photom_control/    # Code location
-run first_pl_crop.py                     # run the code containing the bin function
-pl_b = firstpl_crop()                    # Initialize stuff
-pl_b.run_binning(N=12)                   # run binning = 12
+~/src/firstctrl/FIRST_photom_control/    # Code location <br />
+run first_pl_crop.py                     # run the code containing the bin function <br />
+pl_b = firstpl_crop()                    # Initialize stuff <br />
+pl_b.run_binning(N=12)                   # run binning = 12 <br />
 
-first_tcp                                                    # tmux session for the UDP trnasfer 
-milk-nettransmit 30201 -T 10.20.30.6 -s firstpl_bin -U       # start the UDP trasnfer
+first_tcp                                                    # tmux session for the UDP trnasfer  <br />
+milk-nettransmit 30201 -T 10.20.30.6 -s firstpl_bin -U       # start the UDP trasnfer <br />
+
+
+# SHM control
+
+## SHM Stream control 
+
+milk-streamCTRL                                                     # Shows the various shared memories running (or not :p) 
+
+milk-streamFITSlog -d "/mnt/datazpool/PL/" -z 1000 firstpl pstart   # Start the saving process for the firstpl shm with a default of 1000 im per cube in the specifi
+ed directry
+FPS_FILTSTRING_NAME="FITS" milk-fpsCTR                              # Open the Fits logger
+ - In the fitslogger :
+    Shift+r : start the process
+    Ctrl+r : stop the process
+    Ctrl+e : kill the process 
+
+milk-streamFITSlog -z {nimages} -c {ncubes} {shm_name} on           # Starts saving shm_name for ncubes of nimages  
+
+
+## Create a new SHM (python code)
+map_void          = np.zeros(({width}, {height}), dtype=np.float32) <br />
+{shm_var}         = shm('{shm_name}', map_void, location=-1, shared=1) <br />
+{shm_var}.set_data({image})  <br />
+
