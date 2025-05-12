@@ -148,8 +148,6 @@ with DATA_TYPE being one of the following list:
 
 ## Old optimization procedure (using Zabers)
 
-# Moving the photonic lantern
-
 The Zaber motors move the lantern physically in the focal plane 
 
 Commands to check and set the Zaber position:
