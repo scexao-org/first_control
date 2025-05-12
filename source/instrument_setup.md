@@ -33,6 +33,7 @@ cam ==> camera <br />
 ld ==> lantern driver (low level) <br />
 scripts ==> lantern driver (intermediate level, scripts only for electronics) <br />
 pls ==> photonic lantern scripts (high level) <br />
+zeb ==> control the zabers that moves the photonic lantern  <br />
 
 # Starting the real time displays
 
@@ -146,6 +147,17 @@ with DATA_TYPE being one of the following list:
 
 
 ## Old optimization procedure (using Zabers)
+
+# Moving the photonic lantern
+
+The Zaber motors move the lantern physically in the focal plane 
+
+Commands to check and set the Zaber position:
+```
+first_pl_inj x status
+first_pl_inj x goto 98500
+first_pl_inj y goto 166500
+```
 
 ### 1. Start the process of flux recording
 In  /home/first/src/firstctrl/FIRST_photom_control/ run :  <br />

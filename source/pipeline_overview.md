@@ -1,4 +1,0 @@
-# Pipeline overview
-
-
-![](overview.png) 

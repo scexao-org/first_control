@@ -32,7 +32,6 @@ Welcome to first_control's documentation!
    :maxdepth: 2
    :caption: Pipeline
    
-   pipeline_overview
    recipies
    utility_tools
 

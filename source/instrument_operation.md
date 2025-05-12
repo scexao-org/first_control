@@ -1,12 +1,23 @@
-# Moving the photonic lantern
+# LP control
+
+`tmux a -t fircam_ctrl` <br />
+`firstpl_controller_start` <br />
+
+cam ==> camera <br />
+ld ==> lantern driver (low level) <br />
+scripts ==> lantern driver (intermediate level, scripts only for electronics) <br />
+pls ==> photonic lantern scripts (high level) <br />
+zeb ==> control the zabers that moves the photonic lantern  <br />
+
+# Moving the photonic lantern with Zabers
 
 The Zaber motors move the lantern physically in the focal plane 
 
 Commands to check and set the Zaber position:
 ```
-first_pl_inj x status
-first_pl_inj x goto 98500
-first_pl_inj y goto 166500
+zab.get_positions()
+zab.set_positions()
+zab.delta_move(x,y)
 ```
 
 # Changing camera parameters
@@ -24,10 +35,17 @@ first_pl_inj y goto 166500
         - 'FIRSTPLSMF' : For imaging of the SMF
         - 'FULL' : Full frame
 
+# swithcing mode between triggered or rolling
 
-# Acquiring a Cube / Scanning with the Tip-Tilt
+```
+pls.acq.set_mode_triggered()
+pls.acq.set_mode_rolling(x,y)
+```
+x and y are the position of the piezo.
 
-## Modulation sequences
+# Observing sequence
+
+## Choosing a modulation sequence
 
 The modulation can be changed according to 2 pameters. The modulation pattern and the modulation scale
 
@@ -36,7 +54,7 @@ Modulation patterns:
 - **Number 2**: 150 hexagonal (diameter = 16)
 - **Number 3**: 595 hexagonal (diameter = 31)
 - **Number 4**: 144 rectangular (length = 12)
-- **Number 5**: 625 axis (length = 25)
+- **Number 5**: 625 rectangular (length = 25)
 
 Modulation scale:
 - **Lantern modulation**: Scale = 30, sampled at 16 units
@@ -44,21 +62,35 @@ Modulation scale:
 
 Note: Approximately 1 mas (milliarcsecond) per piezo constraint unit.
 
-`objX` and `objY` represent the position around the tip-tilt zero point. They are not necessarily the center of the photonic lantern.
-
-
 ## Acquisition command
 
 To acquire a cube of images:
 ```
-pls.acq.get_images(nimages, ncubes, mod_sequence, mod_scale, tint, objX, objY)
+pls.acq.get_images(nimages, ncubes, tint, mod_sequence, mod_scale, objX, objY)
 ```
 - `nimages`: Number of DITs (must be a factor of the sequence length)
 - `ncubes`: Number of cubes to acquire
+- `tint`: Integration time of the camera
+- `mod_sequence`: See numbers above (must be between 1 and 5)
+- `mod_scale`: See numbers above
 
-To display the flux from the most recent FITS file:
+
+## Displaying the flux map
+
+To display the flux from the most recent FITS file (folliwing a get_images):
 ```
-pls.ins.opti_flux()
+x,y = pls.ins.opti_flux()
+```
+
+## Centering the photonic lantern
+
+To convert the x,y position for the flux map :
+```
+xzab, yzab = pls.geo.tt_to_zab(x, y)
+```
+To send the zaber to correct poisition using a "delta_move" from actual position:
+```
+zab.delta_move(-xzab, -yzab)
 ```
 
 # Stoping Piezo Modulation

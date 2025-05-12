@@ -1,3 +1,7 @@
+# Pipeline overview
+
+![](overview.png) 
+
 # Recipies
 
 ## LP_createPixelMap.py
