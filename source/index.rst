@@ -26,7 +26,9 @@ Welcome to first_control's documentation!
    :maxdepth: 2
    :caption: Operations
    
-   instrument_operation
+   operation_bon
+   operation_mainscript
+   operation_eon
 
 .. toctree::
    :maxdepth: 2
@@ -34,6 +36,12 @@ Welcome to first_control's documentation!
    
    recipies
    utility_tools
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Miscellaneous
+   
+   misc
 
 Indices and tables
 ==================
