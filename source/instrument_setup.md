@@ -17,18 +17,36 @@ AFTER EACH COMPUTER REBOOT, RUN :
 
 # Starting the real time displays
 
+Launch the displays of the lives (each must be launched in their own terminal) :
+
 ## 1. start camera viewer
 
 `firstcam -z 2 &` <br />                         # Start the camera viewer <br />
 
-## 2. Display live reconstruction
+## 2. Display live flux injection map
 
-`firstpl_rtd_start`			# Start and load the SHM. Use rtd.vmax and rtd.vmin to control color scale on the display. <br />
-`firstpl_rtd_show`			# Display the live <br />
+Opti flux live, a new image is generated for every new saved cube :
 
-## 2. Other live Displays
+`firstpl_opti_start` : link the shared memory with the saved data<br />
+`firstpl_opti_show` : display the content of the shared memory<br />
+Reconstructed image live : will reconstruct an image for every frame viewed by the camera using the coupling map located in /mnt/datazpool/PL/calibration_files/<br />
 
-...
+## 3. Display live image reconstruction
+
+`firstpl_rtd_start` : create a reconstruction and saves it inside a shared memory (must be restarted for every new coupling map).<br />
+`firstpl_rtd_show` : display the content of the shared memory<br />
+
+
+A new coupling map can be generated quickly inside /mnt/datazpool/PL/calibration_files/ using : 
+
+`run /home/first/src/firstctrl/first_ctrl/plrtd/quick_cm.py` : (in a python terminal) Arguments to use : 
+
+- --n-latest : int -> the number of cubes to use 
+- --modid : int -> the modid used to save the fits
+- --modscale : int -> the modscale used to save the fits
+
+The code will look for the n latest files with these parameters and build a coupling map which will be automatically saved in /mnt/datazpool/PL/calibration_files/ for instant use, as well as in /mnt/datazpool/PL/all_coupling_maps/.
+
 
 # Send light to the Photonic Lantern
 
