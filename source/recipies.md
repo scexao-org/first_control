@@ -16,11 +16,11 @@ runPL_createPixelMap.py [options] [file_patterns]
 - `file_patterns`: One or more glob patterns for FITS files (default: *.fits)
 
 **Input:**
-- FITS files with `X_FIRTYP=RAW` in the directory.
+- FITS files with `X_FIRTYP=RAW`.
 
 **Output:**
-- A FITS file with the pixel map.
-- A PNG file with the pixel map visualization.
+- FITS files with `X_FIRTYP=PIXELMAP` in the directory `..\pixelmap`.
+- A PNG file with the pixel map visualization in the directory `..\pixelmap`.
 
 **Options:**
 - `--pixel_min`         Minimum pixel value along wavelength axis (default: 20)
@@ -42,13 +42,16 @@ runPL_preprocess.py [options] [directory | files.fits]
 ```
 **Goal:** Preprocess the data using the pixel map.
 
+**Arguments:**
+- `file_patterns`: One or more glob patterns for FITS files (default: *.fits)
+
 **Input:**
-- FITS files with `X_FIRTYP=RAW` in the directory.
-- FITS files with `X_FIRTYP=PIXELMAP` in the directory.
+- FITS files with `X_FIRTYP=RAW`.
+- FITS files with `X_FIRTYP=PIXELMAP`.
 - The pixel map file is used to extract the data from the raw files and create new FITS files.
 
 **Output:**
-- FITS files with `X_FIRTYP=PREPROC` in the preproc directory.
+- FITS files with `X_FIRTYP=PREPROC` in the directory `..\preproc`.
 - Diagnostic figures saved in the preproc directory:
     * Pixel map overlay on raw images.
     * Centroid shift of the data in the pixel map as a function of time.
@@ -139,7 +142,7 @@ Reconstruct images from FIRST Photonic Lantern data using specified coupling map
 
 **Input:**
 - Preprocessed data FITS files (e.g., with `DPR_CATG=OBJECT` and `DPR_TYPE=PREPROC`)
-- Coupling map FITS files (e.g., with `X_FIRTYP=COUPLINGMAP`)
+- Coupling map FITS files (with `X_FIRTYP=COUPLINGMAP`)
 
 **Output:**
 - Reconstructed image FITS files, including summed images, residuals, and optionally individual frames and wavelength slices.
