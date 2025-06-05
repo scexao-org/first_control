@@ -33,7 +33,8 @@ release = '0.1.0'
 extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.mathjax",
-    "myst_parser"
+    "myst_parser",
+    "sphinx_copybutton"
 ]
 
 html_title = "FIRST control"

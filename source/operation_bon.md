@@ -1,43 +1,14 @@
 
-# Starting up (Beginning of the night)
+# Startup methods
 
-## 1. starting the tip-tilt listener
+The `pls.bon` object contains two methods to reset the electronics and the fitslogger to a working state. Both startup methods should be called before starting operations. In case any issue occurs during the night, re-running those two methods is also a good first approach to debugging.
 
-`tmux a -t firstpl_tt_listener`
-puis:
-`firstpl_tt_listener`
+To reboot the electronics and reset it to a working state:
+```
+pls.bon.startup_electronics()
+```
 
-## 3. start LP control
-
-`tmux a -t fircam_ctrl` <br />
-`firstpl_controller_start` <br />
-
-cam ==> camera <br />
-ld ==> lantern driver (low level) <br />
-scripts ==> lantern driver (intermediate level, scripts only for electronics) <br />
-pls ==> photonic lantern scripts (high level) <br />
-zeb ==> control the zabers that moves the photonic lantern  <br />
-
-## 4. startup electronics 
-
-`pls.bon.startup_electronics()`		# To launch in python, Restart the electronic <br />
-
-## 5. fitslogger 
-
-Start fits logger communication procedure, in basic terminal: <br />
-`FPS_FILTSTRING_NAME="FITS" milk-fpsCTRL -f /milk/shm/milkfifologger`
-
-And then run the command: <br />
-`pls.bon.startup_fitslogger()`		# To launch in python, Restart the fits logger <br />
-
-During the night, in case the fitslogger does not work properly, you should re-run this command. That will reset the fitslogger
-
-## 6. fusion of fits with modulation pattern:
-
-To merge the FITS files to include the modulation pattern (otherwise, it will be missing):
-
-`tmux a -t firstpl_fitsmerger` <br />
-and
-`firstpl_fitsmerger` <br />
-
-It must be run AFTER the `startup_fitslogger` command, since it requires parameters (including the name of the directory where the files are stored) <br />
+To reset the fitslogger:
+```
+pls.bon.startup_fitslogger()
+```

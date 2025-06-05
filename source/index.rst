@@ -26,8 +26,11 @@ Welcome to first_control's documentation!
    :maxdepth: 2
    :caption: Operations
    
+   operation_setup
    operation_bon
-   operation_mainscript
+   operation_centering
+   operation_acquiring
+   operation_offaxis
    operation_eon
 
 .. toctree::
