@@ -4,7 +4,7 @@ The Fibered Imager foR a Single Telescope (FIRST) is a spectro-interferometer op
 
 FIRST feeds a Photonic Lantern device from a focal plane. The Photonic Lantern consists of a multi-mode input slowly transitioning into 19 Single-mode fibers. The multi-mode input’s core has a diameter of 25 micrometers. 
 
-```{image} PL_img_hardware.png
+```{image} PL_Subaru_refined_2025.png
 :width: 500 px
 ```
 *Figure 1: Photonic Lantern hardware. The input is a multi-mode fiber, and the outputs are 19 single mode fibers spliced into a V-groove*
