@@ -2,7 +2,7 @@
 
 The FirstLP instrument is a photonic device operating at visible wavelengths, installed on the SCExAO instrument on the 8m SUBARU telescope (Hawaii).
 
-![](PL_Subaru_refined_2025.png)
+![](FIRST-PL_drawing.png)
 
 The instrument is based on a 'photonic lantern' component. In simplified terms, it is an integrated field spectrograph, providing information on both the spatial and wavelength distribution of the astronomical source.
 
