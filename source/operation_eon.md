@@ -1,8 +1,8 @@
 # Closing down (End of the night)
 
-## don't foget
+## Don't forget
 
-(fyi, when done with the PL, don't foget to issue "first_pickoff out" in the scexao2 terminal)
+When done with the PL, don't fogett to issue `first_pickoff out` in the scexao2 terminal.
 
 ## Darks and flats
 
