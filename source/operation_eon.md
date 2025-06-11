@@ -1,5 +1,9 @@
 # Closing down (End of the night)
 
+## don't foget
+
+(fyi, when done with the PL, don't foget to issue "first_pickoff out" in the scexao2 terminal)
+
 ## Darks and flats
 
 Darks and flats can be saved from the fircam_ctrl terminal with :
