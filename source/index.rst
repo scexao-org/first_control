@@ -37,8 +37,8 @@ Welcome to first_control's documentation!
    :maxdepth: 2
    :caption: Pipeline
    
-   recipies
-   utility_tools
+   pipeline_recipies
+   pipeline_utility_tools
 
 .. toctree::
    :maxdepth: 2
