@@ -15,7 +15,7 @@ Note that all these commands take and return values in units of zaber steps.
 
 The tip/tilt mirror can be used to quickly acquire a 2D scan to locate the target and centre the PL. A scan is obtained using:
 ```
-pls.acq.take_acquisition_scan(self, wait_until_done = False, tint = 0.1, mod_scale = 200)
+pls.acq.get_acquisition_scan(wait_until_done = False, tint = 0.1, mod_scale = 200)
 ```
 The `mod_scale` givens the size of the scan (in mas) and `tint` is the DIT time in seconds.
 
