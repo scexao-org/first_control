@@ -1,5 +1,11 @@
 # Acquiring data
 
+## Using wollaston or not
+
+The command to move the wollaston in/out is :
+`first_pl_wollaston in/out`
+in the shell
+
 ## Rolling vs Triggered mode
 
 The lantern can be operated in two distinct modes: rolling and triggered. Data are acquired differently in these two modes.
