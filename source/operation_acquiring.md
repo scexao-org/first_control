@@ -62,8 +62,8 @@ The modulation patterns are defined from -1 to 1 mas and scaled using the `mod_s
 - **Number 3**: 595 points hexagonal
 - **Number 4**: 144 points rectangular
 - **Number 5**: 625 points rectangular
-- **Number 6**: RESERVED
-- **Number 7**: RESERVED
+- **Number 6**: 313 points hexagonal
+- **Number 7**: 19 points hexagonal
 
 Modulation scale:
 - **Lantern modulation**: Scale = 30, sampled at 16 units
