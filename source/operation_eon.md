@@ -2,7 +2,7 @@
 
 ## Don't forget
 
-When done with the PL, don't fogett to issue `first_pickoff out` in the scexao2 terminal.
+When done with the PL, don't fogett to issue `first_pickoff out` and `vis_block in` in the scexao2 terminal.
 
 ## Darks and flats
 
