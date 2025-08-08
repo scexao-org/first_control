@@ -24,7 +24,7 @@ https://github.com/granttremblay/eso_fits_tools
 
 change the important DPR keywords of files (for exemple, to mark a DARK if not properly taged).
 
-This is for exemple usefull when we are changing the wollaston until the proper keyword is intalled. For example:
+This is, for example, useful when we are changing the Wollaston and the keywords are not properly set. In that case, a typical use would be:
 ```
 runPL_changeKeyword.py firstpl_08:03:23.046790629.fits firstpl_08:05:07.698580687.fits -w OUT
 ```
