@@ -70,7 +70,16 @@ Changing the intensity,
 `src_flux waymore`
 `src_flux wayless`
 
-## 3. Flattening the DM (in case of issues)
+## 3. Checking the vis block
+
+On scexao@scexso2 computer,  <br />
+`vis_block status`
+
+Changing the status, 
+`vis_block on`
+`vis_block off`
+
+## 4. Flattening the DM (in case of issues)
 
 On the scexao@scexao6 computer:  
 `dmflat`
