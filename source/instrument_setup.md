@@ -88,7 +88,9 @@ To center the PSF of PALILA, use `Ctrl + Arrow Keys`.
 
 # Running the pipeline
 
-`tmux a -t firstpl_pipeline` <br />
+`tmux new -s first_pipeline`
+or if it already exists: 
+`tmux a -t first_pipeline` <br />
 and
-`runPL_preprocess.py --loop=10000` <br />
+`runPL_make_preproc.py --loop=10000` <br />
 But you need to have acquired a pixel map before (see pipeline description)
