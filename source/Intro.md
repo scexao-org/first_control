@@ -14,16 +14,13 @@ The main disadvantage is a very narrow field of view, which can be partially mit
 
 If your science case could benefit from these capabilities, read below...
 
-Three modes are currently offered. In 30 minutes of observations, the following performances should be obtained:
+Three modes are currently offered. In 30 minutes of observations, the following performances can be expected:
 
-| Mode | Spectral Resolution | Bandwidth | Spatial/Astrometric Parameter | Field of View | Contrast | R mag |
+| Mode | Spectral Resolution | Bandwidth | Spatial/Astrometric Parameter | Field of View | Contrast | R mag (typical) |
 |------|-------------------|-----------|------------------------------|---------------|----------|-------|
 | **Spectro-astrometry** | 3000 | 600-790 nm | 100 µas (astrometric accuracy) | - | - | 4 mag |
 | **Imaging on-axis** | Broadband | 600-790 nm | 20 mas (spatial resolution) | 130 mas | 10 | 11 mag |
-| **High contrast off-axis imaging** | Broadband | 600-790 nm | 100 mas (inner work angle) | 1000 mas | 1000 | 6 mag |
+| **High contrast off-axis imaging** | Broadband | 600-790 nm | 100 mas (inner working angle) | 1000 mas | 1000 | 6 mag |
 
-
-The following plot presents the astrometric accuracy and contrast range achievable as a function of the object’s R magnitude. These results are derived from a combination of analytical models and empirical measurements.
-
-
+Performance decreases for fainter targets. The plot below shows the achievable astrometric accuracy and contrast dynamic range as a function of R magnitude. These results are based on a combination of analytical models and empirical measurements:
 ![](astrometric_contrast_vs_Rmag.png)
