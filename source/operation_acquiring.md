@@ -72,7 +72,7 @@ Modulation scale:
 
 ## Setting the best exposure time
 
-The integration time should be chosen so that we are not limited by readout noise, while keeping the integration time as short as possible. The integration time must also account for the fact that the piezo tip-tilt has a limited bandwidth of approximately 100Hz.
+The detector integration time (also called exposure time) should be chosen so that we are not limited by readout noise, while keeping the integration time as short as possible. The integration time must also account for the fact that the piezo tip-tilt has a limited bandwidth of approximately 30Hz.
 
 The easiest way is to select the detector integration time (DIT) according to the plot below:
 
