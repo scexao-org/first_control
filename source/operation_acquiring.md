@@ -68,3 +68,13 @@ The modulation patterns are defined from -1 to 1 mas and scaled using the `mod_s
 Modulation scale:
 - **Lantern modulation**: Scale = 30, sampled at 16 units
 - **Piezo modulation**: Scale = 1000, using sequence number 5 (length = 25)
+
+
+## Setting the best exposure time
+
+The choice of the integration time should be chosen so that we are not limited by readout noise, while at the same time have as short integration time as possible. The integration time must also account from the fact that the piezo tip-tilt has a limited bandwidth, of the order of 100Hz.
+
+The easiest way is to select the integration time according to the plot below:
+
+
+![](recommended_DIT_vs_Rmag.png)
