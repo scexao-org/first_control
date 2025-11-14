@@ -7,7 +7,7 @@ The FirstLP instrument is a photonic device operating at visible wavelengths, in
 The instrument is based on a 'photonic lantern' component. In simplified terms, it is an integrated field spectrograph, providing information on both the spatial and wavelength distribution of the astronomical source.
 
 The advantages are twofold:  
-1) It enables diffraction-limited imaging at visible wavelengths, with a spectral resolution of approximately 4000.  
+1) It enables diffraction-limited imaging at visible wavelengths, with a spectral resolution of approximately 3000.  
 2) It allows spectro-astrometric measurements below the diffraction limit of the telescope.
 
 The main disadvantage is a very narrow field of view, which can be partially mitigated by moving the photonic lantern.
