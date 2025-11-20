@@ -11,7 +11,7 @@ or if it already exists:
 
 You can go to the data directory directly with the command `cd $DETDATA`
 
-## runLP_dfits
+## runPL_dfits
 
 It shows the most important parameters of header:
 ![](FIRST-PL_dfits.png)

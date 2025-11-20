@@ -1,6 +1,5 @@
 # Additional how-to
 
-
 ## SHM Stream control 
 
 milk-streamCTRL                                                     # Shows the various shared memories running (or not :p) 
@@ -108,7 +107,7 @@ The project is the result of a collaboration between the University of Hawai'i, 
 | Data reduction & Software  | Y. J. Kim | UCLA |
 | Data reduction & Software  | J. Sarrazin | Paris Observatory |
 
-| University of Hawai'i | Paris Observatory | Subaru Telescope |
+| University of Hawai'i | LIRA / Paris Observatory | Subaru Telescope |
 |:---------------------:|:-----------------:|:----------------:|
 | ![UH Logo](logo_uh.png) | ![Paris Obs Logo](logo_lira.png) | ![Subaru Logo](logo_subaru.png) |
 
