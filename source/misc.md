@@ -1,5 +1,3 @@
-
-
 # Additional how-to
 
 
@@ -91,4 +89,26 @@ They should look like this :
 | ![](SK_processed.png)  |  ![](HIP84893_processed.png) |
 
 If the optimization is successful, the 2D gaussian fit will appear clearly on the coupling map image. If not, adjust the (x0,y0) corrdinates according to the coupling map shape (carreful, if the dark is bad, this process does not work properly).
+
+# FIRST-PL Team
+
+
+The project is the result of a collaboration between the University of Hawai'i, the Paris Observatory, and the Subaru Telescope. The team is responsible for ensuring that the instrument remains in good condition and fully operational for observations. The team will also help with data reduction and maintain a working pipeline. It is currently composed of:
+
+| Role | Name | Institut |
+|------|------|----------|
+| PI | S. Vievard | U. of Hawaii |
+| PI | E. Huby | Paris Observatory |
+| AO scientist | O. Guyon | SUBARU telescope |
+| Instrument scientist | S. Lacour | Paris Observatory |
+| System scientist | M. Nowak | Paris Observatory |
+| Spectrometer | M. Lallement | IPAG / CNRS |
+| Electronics | T. Lemoult | Paris Observatory |
+| Data reduction & Software | A. Walk | U. of Hawaii |
+| Data reduction & Software  | Y. J. Kim | UCLA |
+| Data reduction & Software  | J. Sarrazin | Paris Observatory |
+
+| University of Hawai'i | Paris Observatory | Subaru Telescope |
+|:---------------------:|:-----------------:|:----------------:|
+| ![UH Logo](logo_uh.png) | ![Paris Obs Logo](logo_lira.png) | ![Subaru Logo](logo_subaru.png) |
 
