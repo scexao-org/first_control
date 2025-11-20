@@ -5,9 +5,9 @@
 Pipeline to reduce the FIRST data (using the Visible Photonic Lantern) at SUBARU/SCEXAO.
 The scripts are designed to run sequentially, each handling a specific stage of data reduction, calibration, and analysis. FITS file keywords are used to determine file roles and processing steps.
 
-## Project Structure
+# Project Structure
 
-### Directory Organization
+## Directory Organization
 ```
 first_pipeline/
 ├── classes/          # Data structure classes
@@ -22,15 +22,24 @@ first_pipeline/
 └── [main scripts]    # Primary pipeline scripts
 ```
 
-### Key Components & Workflow
+## Key Components & Workflow
 - **Shell and Python scripts**: Each major step is a separate script
 - **Data flow**: Raw FITS files → Pixel Map → Preprocessing → Wavelength Map → Coupling Maps → Calibration → Image Reconstruction
 - **Script chaining**: Output from one script is often input for the next
 - **Modern CLI**: All scripts use `argparse` for professional command-line interfaces
 
-## Essential Scripts & Usage
+## Requirements
 
-### runPL_dfits
+- **Python dependencies**: 
+  - Core scientific stack: `numpy`, `scipy`, `matplotlib`
+  - Astronomy libraries: `astropy`, `astroplan` 
+  - Utility libraries: `tqdm` (progress bars), `peakutils` (peak detection)
+- **External tools**: `dfits` from ESO FITS Tools for FITS inspection
+- **FITS keywords**: Scripts rely on specific header keywords for file selection
+
+# Essential Scripts & Usage
+
+## runPL_dfits
 Shell script to quickly inspect the key parameters of a FIRST FITS file.  
 **Requirements**: `dfits` from [ESO FITS Tools](https://github.com/granttremblay/eso_fits_tools)
 
@@ -41,7 +50,7 @@ Shell script to quickly inspect the key parameters of a FIRST FITS file.
 
 ---
 
-### runPL_changeKeyword.py
+## runPL_changeKeyword.py
 Python script to update FITS header keywords for file classification.  
 Useful for temporary keyword changes during data organization.
 
@@ -62,7 +71,7 @@ python runPL_changeKeyword.py --OBJECT="Target Name" --X_FIRTYP=SCIENCE data/*.f
 
 ---
 
-### runPL_create_pixelMap.py
+## runPL_create_pixelMap.py
 Python script to create a Pixel Map for preprocessing raw data.  
 This map is essential for aligning and calibrating the data.
 
@@ -86,7 +95,7 @@ python runPL_create_pixelMap.py --filter_files data/*.fits
 
 ---
 
-### runPL_make_preproc.py
+## runPL_make_preproc.py
 Python script to preprocess raw FIRST data using the pixel map.  
 Applies pixel map alignment and performs initial data cleaning.
 
@@ -110,7 +119,7 @@ python runPL_make_preproc.py --loop 30 /path/to/directory  # Monitor mode
 
 ---
 
-### runPL_create_wavelengthMap.py
+## runPL_create_wavelengthMap.py
 Python script to create a Wavelength Map from preprocessed data.  
 Identifies emission lines and maps them to pixel positions for wavelength calibration.
 
@@ -128,7 +137,7 @@ python runPL_create_wavelengthMap.py --poly_degree=3 data/*.fits
 
 ---
 
-### runPL_create_couplingMaps.py
+## runPL_create_couplingMaps.py
 Python script to create Coupling Maps from preprocessed data.  
 Analyzes the coupling efficiency of the photonic lantern channels.
 
@@ -150,7 +159,7 @@ python runPL_create_couplingMaps.py --output_dir=/custom/path data/*.fits
 
 ---
 
-### runPL_make_image.py
+## runPL_make_image.py
 Python script to reconstruct images from coupling maps.  
 Processes data cubes and generates deconvolved images.
 
@@ -168,7 +177,7 @@ python runPL_make_image.py --deconvolution_method=richardson_lucy data/*.fits
 
 ---
 
-### runPL_make_astrometry.py
+## runPL_make_astrometry.py
 Python script for astrometric analysis from FIRST Photonic Lantern data.  
 Performs precise position measurements and astrometric calibrations using coupling maps.
 
@@ -196,7 +205,7 @@ python runPL_make_astrometry.py --wavelength_smooth 2 --pyramids *.fits
 
 ---
 
-## Workflow Example
+# Workflow Example
 
 1. **Inspect FITS files**: `./runPL_dfits <file>`
 2. **Update keywords**: `python runPL_changeKeyword.py --X_FIRTYP=RAW *.fits`
@@ -206,12 +215,6 @@ python runPL_make_astrometry.py --wavelength_smooth 2 --pyramids *.fits
 6. **Create coupling maps**: `python runPL_create_couplingMaps.py *.fits`
 7. **Perform astrometry**: `python runPL_make_astrometry.py *.fits`
 8. **Reconstruct images**: `python runPL_make_image.py *.fits`
-
-## Requirements
-
-- **Python dependencies**: numpy, astropy, matplotlib, scipy (standard scientific stack)
-- **External tools**: `dfits` from ESO FITS Tools for FITS inspection
-- **FITS keywords**: Scripts rely on specific header keywords for file selection
 
 ## Getting Help
 
