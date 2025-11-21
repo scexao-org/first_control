@@ -5,7 +5,7 @@
 Pipeline to reduce the FIRST data (using the Visible Photonic Lantern) at SUBARU/SCEXAO.
 The scripts are designed to run sequentially, each handling a specific stage of data reduction, calibration, and analysis. FITS file keywords are used to determine file roles and processing steps.
 
-# Project Structure
+# Pipeline Structure
 
 ## Directory Organization
 ```
@@ -203,36 +203,3 @@ python runPL_make_astrometry.py --wavelength_smooth 2 --pyramids *.fits
 **Input**: Preprocessed FITS files with coupling maps  
 **Output**: Astrometric measurements and calibrated position data
 
----
-
-# Workflow Example
-
-1. **Inspect FITS files**: `./runPL_dfits <file>`
-2. **Update keywords**: `python runPL_changeKeyword.py --X_FIRTYP=RAW *.fits`
-3. **Create pixel map**: `python runPL_create_pixelMap.py --filter_files *.fits`
-4. **Preprocess data**: `python runPL_make_preproc.py /data/directory`
-5. **Generate wavelength map**: `python runPL_create_wavelengthMap.py *.fits`
-6. **Create coupling maps**: `python runPL_create_couplingMaps.py *.fits`
-7. **Perform astrometry**: `python runPL_make_astrometry.py *.fits`
-8. **Reconstruct images**: `python runPL_make_image.py *.fits`
-
-## Getting Help
-
-All scripts provide detailed help information:
-```bash
-python [script_name] --help
-```
-
-This displays:
-- Complete usage syntax
-- Detailed option descriptions  
-- Input/output file requirements
-- Practical examples
-- Default values
-
-## Notes for Development
-
-- **Modern CLI**: All scripts use `argparse` with professional help messages
-- **Organized imports**: Classes in `classes/` directory, libraries in `libraries/`
-- **Consistent patterns**: Follow existing argument and naming conventions
-- **FITS compliance**: Maintain keyword conventions for pipeline compatibility
