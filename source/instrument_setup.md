@@ -52,13 +52,13 @@ The code will look for the n latest files with these parameters and build a coup
 
 ## 1. Pick off mirror
 On scexao2 computer, to know the status of the pick off mirror: <br />
-`first_pickoff status`
+`firstpl_pickoff status`
 
 To put the pick off mirror in: <br />
-`first_pickoff in`
+`firstpl_pickoff in`
 
 To put the pick off mirror out: <br />
-`first_pickoff out`
+`firstpl_pickoff out`
 also on the scexao2 computer
 
 ## 2. Starting the supercontinuum source (for calibration)
@@ -85,6 +85,33 @@ On the scexao@scexao6 computer:
 `dmflat`
 
 To center the PSF of PALILA, use `Ctrl + Arrow Keys`.
+
+
+## 5. Operation of the Wavelength Calibration Unit
+
+### 1. Pick off mirror
+On scexao2 computer, to know the status of the wavelength calibration unit pick off mirror: <br />
+`first_pickoff status`
+
+To put the pick off mirror in: <br />
+`first_pickoff in`
+
+To put the pick off mirror out: <br />
+`first_pickoff out`
+also on the scexao2 computer
+
+### 2. Operation of the Halogen Lamp
+The Halogen lamp is powered by the SCExAO NPS number 2. <br />
+
+To power on the source from scexao2 computer : <br />
+`nps 2 5 on`
+
+To power off the source from scexao2 computer : <br />
+`nps 2 5 off`
+
+### 3. Operation of the Neon source
+The source is plugged on a windows NUC computer. The adress to log in that computer is : 133.40.163.196 (ask for the password) <br />
+(Need to ad an image of the software)
 
 # Running the pipeline
 
