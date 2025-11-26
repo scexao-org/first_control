@@ -17,3 +17,8 @@ The rolling mode can be activated (see acquiring data):
 ```
 pls.acq.set_mode_rolling(x = 0, y = 0, open_loop = True)
 ```
+
+To put the system in triggered mode, run:
+```
+pls.acq.set_mode_triggered()
+```
