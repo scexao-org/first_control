@@ -1,17 +1,6 @@
 
 # Practical informations
 
-## Workflow Example
-
-1. **Inspect FITS files**: `./runPL_dfits <file>`
-2. **Update keywords**: `python runPL_changeKeyword.py --X_FIRTYP=RAW *.fits`
-3. **Create pixel map**: `python runPL_create_pixelMap.py --filter_files *.fits`
-4. **Preprocess data**: `python runPL_make_preproc.py /data/directory`
-5. **Generate wavelength map**: `python runPL_create_wavelengthMap.py *.fits`
-6. **Create coupling maps**: `python runPL_create_couplingMaps.py *.fits`
-7. **Perform astrometry**: `python runPL_make_astrometry.py *.fits`
-8. **Reconstruct images**: `python runPL_make_image.py *.fits`
-
 ## Getting Help
 
 All scripts provide detailed help information:

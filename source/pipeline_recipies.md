@@ -13,7 +13,8 @@ first_pipeline/
 ├── classes/          # Data structure classes
 │   ├── runPL_class_couplingMap.py
 │   ├── runPL_class_dataCube.py
-│   └── runPL_class_pixelMap.py
+│   ├── runPL_class_pixelMap.py
+│   └── runPL_class_flatMap.py
 ├── libraries/        # Utility functions
 │   ├── runPL_library_basic.py
 │   ├── runPL_library_io.py
@@ -22,7 +23,19 @@ first_pipeline/
 └── [main scripts]    # Primary pipeline scripts
 ```
 
-## Key Components & Workflow
+## Workflow
+
+1. **Inspect FITS files**: `./runPL_dfits <file>`
+2. **Update keywords if needed**: `python runPL_changeKeyword.py --X_FIRTYP=RAW *.fits`
+3. **Create pixel map**: `python runPL_create_pixelMap.py --filter_files *.fits`
+4. **Preprocess data**: `python runPL_make_preproc.py /data/directory`
+5. **Create flat field map**: `python runPL_create_flatMap.py *.fits`
+6. **Generate wavelength map**: `python runPL_create_waveMap.py *.fits`
+7. **Create coupling maps**: `python runPL_create_couplingMaps.py *.fits`
+8. **Perform astrometry**: `python runPL_make_astrometry.py *.fits`
+9. **Reconstruct images**: `python runPL_make_image.py *.fits`
+
+## Key Components
 - **Shell and Python scripts**: Each major step is a separate script
 - **Data flow**: Raw FITS files → Pixel Map → Preprocessing → Wavelength Map → Coupling Maps → Calibration → Image Reconstruction
 - **Script chaining**: Output from one script is often input for the next
@@ -117,23 +130,52 @@ python runPL_make_preproc.py --loop 30 /path/to/directory  # Monitor mode
 **Input**: Files with `X_FIRTYP=RAW` and `X_FIRTYP=PIXELMAP`  
 **Output**: Preprocessed files with `X_FIRTYP=PREPROC` in `preproc/` directory
 
+
 ---
 
-## runPL_create_wavelengthMap.py
-Python script to create a Wavelength Map from preprocessed data.  
-Identifies emission lines and maps them to pixel positions for wavelength calibration.
+### runPL_create_flatMap.py
+Python script to create flat field maps from preprocessed flat data.  
+Generates gain coefficients and quality metrics for detector calibration.
 
 **Usage:**
 ```bash
-python runPL_create_wavelengthMap.py [options] [files...]
+python runPL_create_flatMap.py [options] [files...]
 
 # Examples:
-python runPL_create_wavelengthMap.py --wave_list="[753.6, 748.9, 743.9]" *.fits
-python runPL_create_wavelengthMap.py --poly_degree=3 data/*.fits
+python runPL_create_flatMap.py --wollaston IN *.fits
+python runPL_create_flatMap.py --dark_files=/path/to/darks/*.fits data/*.fits
 ```
 
-**Input**: Files with `X_FIRTYP=WAVE`  
-**Output**: Wavelength map for spectral calibration
+**Key Options:**
+- `--wollaston`: Wollaston status (IN for internal, OUT for no wollaston)
+- `--dark_files`: Select specific dark file(s) to use for calibration
+
+**Input**: Preprocessed flat field files with `X_FIRTYP=PREPROC` and `DATA-TYP=FLAT`  
+**Output**: Flat field map with gain coefficients and fit quality metrics
+
+---
+
+### runPL_create_waveMap.py
+Python script to create wavelength maps from Neon calibration data.  
+Detects emission lines and fits polynomial wavelength solutions with aberration correction.
+
+**Usage:**
+```bash
+python runPL_create_waveMap.py [options] [files...]
+
+# Examples:
+python runPL_create_waveMap.py --wollaston IN --flatMap=/path/to/flat.fits *.fits
+python runPL_create_waveMap.py --Nexclude 3 data/*.fits
+```
+
+**Key Options:**
+- `--wollaston`: Wollaston status (IN for internal, OUT for no wollaston)
+- `--flatMap`: Select specific flat map file to use for calibration
+- `--dark_files`: Select specific dark file(s) to use
+- `--Nexclude`: Number of wavelength peaks to exclude from fit (default: 4)
+
+**Input**: Neon calibration files with `X_FIRTYP=PREPROC` and `DATA-TYP=COMPARAISON`  
+**Output**: Wavelength map with polynomial coefficients and aberration correction
 
 ---
 

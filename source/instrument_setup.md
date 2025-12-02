@@ -112,12 +112,3 @@ To power off the source from scexao2 computer : <br />
 ### 3. Operation of the Neon source
 The source is plugged on a windows NUC computer. The adress to log in that computer is : 133.40.163.196 (ask for the password) <br />
 (Need to ad an image of the software)
-
-# Running the pipeline
-
-`tmux new -s first_pipeline`
-or if it already exists: 
-`tmux a -t first_pipeline` <br />
-and
-`runPL_make_preproc.py --loop=10000` <br />
-But you need to have acquired a pixel map before (see pipeline description)
