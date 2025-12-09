@@ -2,7 +2,14 @@
 
 ## Don't forget
 
-When done with the PL, don't fogett to issue `superk power off`, `first_pickoff out` and `vis_block in` in the scexao2 terminal.
+When done with the PL, don't fogett to issue `superk power off`, `first_pickoff out` and `vis_block in` in the scexao2 terminal. `nps 2 5 off` is to shutdown the flat lamp:
+```
+ssh scexao2 "superk power off"
+ssh scexao2 "first_pickoff out"
+ssh scexao2 "firstpl_pickoff out"
+ssh scexao2 "vis_block in"
+ssh scexao2 "nps 2 5 off"
+```
 
 ## Darks and flats
 
