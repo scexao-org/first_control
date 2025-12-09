@@ -1,3 +1,22 @@
+# Troubleshooting
+
+## Camera frozen
+
+If the camera viewer freezes, you can first check whether it is running or not by :  <br />
+- Check the streams activity using `milk-streamCTRL`
+- Checkng the `firstpl_fgrab` tmux session.
+
+If both show that the camera is not running, try restarting the control software `firstpl_controller_start`. <br />
+
+If the camera is still not running, powercycle it. From a scexao2 termnial, power cycle issuing the following : <br />
+`nps 2 7 off` (wait a few seconds)
+`nps 2 7 on`
+
+Wait a few seconds, and restart the control software `firstpl_controller_start`.
+
+
+
+
 # Additional how-to
 
 ## SHM Stream control 
@@ -23,6 +42,12 @@ map_void          = np.zeros(({width}, {height}), dtype=np.float32) <br />
 
 ## Old way to start the camera
 camstart first                          # Starts the FIRST-PL Hamamatsu camera  <br />
+
+## Start the focal plane camera
+
+Start the focal plane camera using `camsart first_pupil`.  <br />
+Start the viewer with `shmImshow.py fpupcam` (temprorary viewer). 
+Insert the pickoff using `firstpl_fp`
 
 
 ## Manually changing data type
