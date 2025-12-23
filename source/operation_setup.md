@@ -21,7 +21,20 @@ To stop the listener, simply run the following commands in the terminal:
 - `listener.stop()` to disconnect from the USB port and ZMQ socket
 - `exit` to exit the python terminal
 
-## 3. Starting the control terminal
+
+## 3. Starting the fitsmerger
+
+The fitsmerger should be started in its own tmux session:
+- `tmux new -s firstpl_fitsmerger` to create the tmux session if it does not exist
+- `tmux a -t firstpl_fitsmerger` to connect to the tmux session
+- `firstpl_fitsmerger` to start the fitsmerger
+
+The re-synchronize the directory with the fitslogger, you can run `merger.change_target_dir()` from the fitsmerger terminal. 
+
+The fitsmerger will automatically look for new fits files and try to append the modulation table to them. If any error occurs, an error message will be displayed. The fitsmerger also checks that the number of dits in the files that are saved by the logger does match the requested number of frames, and can therefore be used to detect any issue with teh fitslogger.
+
+
+## 4. Starting the control terminal
 
 Again, it is highly suggested to start the controller in its own tmux session. This is particularly useful as it allows to control the instrument from an ssh terminal, bypassing the VNC and its sometimes laggy connection.
 - `tmux new -s fircam_ctrl` to create the tmux session if it does not exist
@@ -40,9 +53,13 @@ To exit the controller, run:
 - `exit` to leave the ipython terminal
 
 
-## 4. Preparing the fitslogger 
+## 5. Preparing the fitslogger 
 
 For use with the tip/tilt module, the fitslogger needs to be started with a specific name for its fifo queue, in order to allow the controller to interact with it. This is done by running the following commands in a terminal: 
+- `milk-streamFITSlog -d "/mnt/datazpool/PL/" -z 250 firstpl pstart`
+
+Note that this command is supposedly started by the control software. In order to view the fitslooger, enter:
+
 - `firstpl_fitslogger`
 
 Once in the fitslogger screen, you can use the arrows to move around. Press [F2] to move to the FPS CTRL window, and the [RIGHT] to show the main screen.  
@@ -50,18 +67,4 @@ Once in the fitslogger screen, you can use the arrows to move around. Press [F2]
 The fitslogger is probably the most important thing to monitor carefully during the night. During the night, in case the fitslogger does not work properly, you should re-run this command. That will reset the fitslogger.
 
 
-## 5. Starting the fitsmerger
 
-When the fitsmerger starts, it automatically requests the name of the directory in which the fits files are saved from the fitslogger. Therefore, it is important to first set this directory before starting the fitsmerger. In the controller terminal, run:
-```
-pls.bon.startup_fitslogger()
-```
-
-Check that the name of the directory has been updated to the current date in the fitsmerger. As usual, the fitsmerger should then be started in its own tmux session:
-- `tmux new -s firstpl_fitsmerger` to create the tmux session if it does not exist
-- `tmux a -t firstpl_fitsmerger` to connect to the tmux session
-- `firstpl_fitsmerger` to start the fitsmerger
-
-The re-synchronize the directory with the fitslogger, you can run `merger.change_target_dir()` from the fitsmerger terminal. 
-
-The fitsmerger will automatically look for new fits files and try to append the modulation table to them. If any error occurs, an error message will be displayed. The fitsmerger also checks that the number of dits in the files that are saved by the logger does match the requested number of frames, and can therefore be used to detect any issue with teh fitslogger.
