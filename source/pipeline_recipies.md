@@ -1,6 +1,6 @@
 # Data organisation
 
-The scripts are designed to run sequentially, each handling a specific stage of data reduction, calibration, and analysis. 
+The "runPL_*.py" scripts are designed to run sequentially, each handling a specific stage of data reduction, calibration, and analysis. 
 
 Two main FITS file keywords are to organise the data: "DATA-TYP" and "X_FIRTYP". The first keyword is specific to SUBARU, the second one is specific to the FIRST instrument.
 

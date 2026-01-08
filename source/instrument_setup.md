@@ -76,8 +76,8 @@ On scexao@scexso2 computer,  <br />
 `vis_block status`
 
 Changing the status, 
-`vis_block on`
-`vis_block off`
+`vis_block in`
+`vis_block out`
 
 ## 4. Flattening the DM (in case of issues)
 
