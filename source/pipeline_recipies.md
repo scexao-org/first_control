@@ -1,9 +1,12 @@
-# Pipeline overview
+# Data organisation
+
+The scripts are designed to run sequentially, each handling a specific stage of data reduction, calibration, and analysis. 
+
+Two main FITS file keywords are to organise the data: "DATA-TYP" and "X_FIRTYP". The first keyword is specific to SUBARU, the second one is specific to the FIRST instrument.
+
+The user will give the files as arguments to the each script. If none argument is given, the script will look for all files within current directory. The script will automatically select relevant data based on the FITS keywords.
 
 ![](overview.png) 
-
-Pipeline to reduce the FIRST data (using the Visible Photonic Lantern) at SUBARU/SCEXAO.
-The scripts are designed to run sequentially, each handling a specific stage of data reduction, calibration, and analysis. FITS file keywords are used to determine file roles and processing steps.
 
 # Pipeline Structure
 
@@ -11,16 +14,24 @@ The scripts are designed to run sequentially, each handling a specific stage of 
 ```
 first_pipeline/
 ├── classes/          # Data structure classes
-│   ├── runPL_class_couplingMap.py
-│   ├── runPL_class_dataCube.py
 │   ├── runPL_class_pixelMap.py
-│   └── runPL_class_flatMap.py
+│   ├── runPL_class_dataCube.py
+│   ├── runPL_class_flatMap.py
+│   ├── runPL_class_waveMap.py
+│   └── runPL_class_couplingMap.py
 ├── libraries/        # Utility functions
 │   ├── runPL_library_basic.py
 │   ├── runPL_library_io.py
 │   ├── runPL_library_linalg.py
 │   └── runPL_library_plots.py
-└── [main scripts]    # Primary pipeline scripts
+├── [main scripts]    # Primary pipeline scripts
+├── runPL_create_pixelMap.py
+├── runPL_make_preproc.py
+├── runPL_create_flatMap.py
+├── runPL_create_waveMap.py
+├── runPL_create_couplingMap.py
+├── runPL_make_image.py
+└── runPL_make_astrometry.py
 ```
 
 ## Workflow
@@ -31,9 +42,9 @@ first_pipeline/
 4. **Preprocess data**: `python runPL_make_preproc.py /data/directory`
 5. **Create flat field map**: `python runPL_create_flatMap.py *.fits`
 6. **Generate wavelength map**: `python runPL_create_waveMap.py *.fits`
-7. **Create coupling maps**: `python runPL_create_couplingMaps.py *.fits`
-8. **Perform astrometry**: `python runPL_make_astrometry.py *.fits`
-9. **Reconstruct images**: `python runPL_make_image.py *.fits`
+7. **Create coupling maps**: `python runPL_create_couplingMap.py *.fits`
+8. **Perform astrometry if needed**: `python runPL_make_astrometry.py *.fits`
+9. **Reconstruct images if needed**: `python runPL_make_image.py *.fits`
 
 ## Key Components
 - **Shell and Python scripts**: Each major step is a separate script
