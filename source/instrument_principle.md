@@ -34,13 +34,22 @@ The 19 outputs of the Photonic Lantern feed a mid resolution spectrograph (R~3,0
 **Capability:** Sub-λ/D measurement of photocenter position as a function of wavelength, enabling spatial information retrieval at scales well below the diffraction limit.
 
 **Science applications:**<br>
-- Mapping accretion signatures on protoplanets via Hα emission
-- Detecting asymmetries in stellar environments
-- Measuring spatial distribution of spectral features
+* Mapping accretion signatures on protoplanets via Hα emission
+* Detecting asymmetries in stellar environments
+* Measuring spatial distribution of spectral features
 
 **Data requirements:**<br>
 - **Primary:** FIRST-PL camera acquisition
 - **Auxiliary (required):** Focal plane images from at least 1 of 2 additional cameras (SCExAO/VAMPIRES and/or SCExAO internal IR camera)
+
+**On-sky calibration requirements:**<br>
+- Self-calibrating via tip-tilt telemetry from auxiliary cameras
+- No separate calibrator star observation required
+
+**Off-sky calibration requirements:**<br>
+- Wavelength calibration (Neon lamp)
+- Flat field calibration (Halogen lamp)
+- Dark frames 
 
 ---
 
@@ -49,7 +58,7 @@ The 19 outputs of the Photonic Lantern feed a mid resolution spectrograph (R~3,0
 **Capability:** λ/D spatial resolution within the field of view of the photonic lantern (~130 mas), with modest contrast capabilities (contrast ~10).
 
 **Science applications:**<br>
-- Resolving stellar surfaces and features
+-- Resolving stellar surfaces and features
 - Detecting close companions within the field of view
 - Characterizing compact circumstellar environments
 
@@ -57,6 +66,13 @@ The 19 outputs of the Photonic Lantern feed a mid resolution spectrograph (R~3,0
 - **Primary:** FIRST-PL camera acquisition
 - **Auxiliary (optional):** Telemetry from SCExAO for additional wavefront/PSF monitoring
 
+**On-sky calibration requirements:**<br>
+- Calibrator star observation (similar magnitude to target or brighter)
+
+**Off-sky calibration requirements:**<br>
+- Wavelength calibration (Neon lamp)
+- Flat field calibration (Halogen lamp)
+- Dark frames
 ---
 
 ### Mode 3: Off-Axis Imaging
@@ -72,3 +88,11 @@ The 19 outputs of the Photonic Lantern feed a mid resolution spectrograph (R~3,0
 - **Primary:** FIRST-PL camera acquisition
 - **Auxiliary (optional):** Telemetry from SCExAO for additional wavefront/PSF monitoring
 
+**On-sky calibration requirements:**<br>
+- On-axis pointing on primary star (serves as calibration)
+- Interleaved on-axis/off-axis observations recommended
+
+**Off-sky calibration requirements:**<br>
+- Wavelength calibration (Neon lamp)
+- Flat field calibration (Halogen lamp)
+- Dark frames
