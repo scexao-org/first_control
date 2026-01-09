@@ -75,8 +75,8 @@ Shell script to quickly inspect the key parameters of a FIRST FITS file.
 ---
 
 ## runPL_changeKeyword.py
-Python script to update FITS header keywords for file classification.  
-Useful for temporary keyword changes during data organization.
+Python script to modify FITS header keywords for FIRST Pipeline classification and processing control.  
+Essential tool for classifying files and tracking their processing stages throughout the sequential pipeline workflow. Used for temporary keyword changes during data organization and to ensure proper file selection by downstream scripts.
 
 **Usage:**
 ```bash
@@ -84,14 +84,21 @@ python runPL_changeKeyword.py [options] [files...]
 
 # Examples:
 python runPL_changeKeyword.py --DATA-TYP=FLAT --X_FIRTYP=RAW *.fits
-python runPL_changeKeyword.py --OBJECT="Target Name" --X_FIRTYP=SCIENCE data/*.fits
+python runPL_changeKeyword.py --OBJECT="HD 164461" --X_FIRTYP=PREPROC target_data/*.fits
+python runPL_changeKeyword.py --DATA-TYP=COMPARAISON --X_FIRTYP=RAW neon_calib.fits
+python runPL_changeKeyword.py --DATE=DEFAULT --X_FIRTYP=RAW recent_observations/*.fits
 ```
 
 **Key Options:**
-- `--DATA-TYP`: Data category (TEST, DARK, FLAT)
-- `--X_FIRTYP`: Data product type (RAW, WAVE, FLAT, SCIENCE, PIXELS, SPECTRA)
-- `--OBJECT`: Target name
-- `--X_FIRWOL`: Wollaston status (IN/OUT)
+- `--DATA-TYP`: Data classification (FLAT=SuperK data, DARK=background, OBJECT=science targets, ACQUISITION=target acquisition, COMPARAISON=Neon calibration, TEST=validation)
+- `--X_FIRTYP`: Processing stage (RAW=unprocessed, PREPROC=preprocessed, PIXELMAP/WAVEMAP/COULPLINGMAP=calibration products)
+- `--OBJECT`: Target name for science observations (e.g., "HD 164461", "Beta Pic")
+- `--X_FIRMID`: Modulation ID identifying specific modulation pattern
+- `--X_FIRTRG`: Camera trigger mode (INT=internal, EXT=external synchronization)
+- `--X_FIRWOL`: Wollaston prism status (IN=polarimetry mode, OUT=photometry mode)
+- `--GAIN`: Camera gain setting value
+- `--DATE`: Observation date (use DEFAULT to extract from filename)
+
 
 ---
 

@@ -58,7 +58,7 @@ pls.focal.start()
 ```
 It will start the focal plane camera and move it into the beam. The command `pls.focal.stop()` is doing the opposite.
 
-## 3.2 Acquire a dataset
+### 3.2 Acquire a dataset
 
 Use:
 ```
@@ -68,14 +68,14 @@ It will store a bunch of fits files that are then used to find the position of t
 
 To display the flux from the most recent FITS file and retrieve the x, y position of the star:
 ```
-x,y = pls.ins.opti_flux_fcam()
+xfcam,yfcam = pls.ins.opti_flux_fcam()
 ```
 
 ### 3.3 Centering the photonic lantern
 
 To convert the tip/tilt x,y position retrieved from the flux map to zaber coordinates:
 ```
-xzab, yzab = pls.geo.tt_to_zab(x, y)
+xzab, yzab = pls.geo.fcam_to_zab(xfcam,yfcam)
 ```
 
 This can be used to recenter the zaber to the correct poisition using a "delta_move":
