@@ -160,31 +160,10 @@ python runPL_create_waveMap.py --Nexclude 3 --dark_files=dark*.fits neon_data/*.
 - Output maps enable precise wavelength calibration of science observations
 
 ### Input
-Neon calibration files with `X_FIRTYP=PREPROC` and `DATA-TYP=COMPARAISON`
+Neon calibration files with `X_FIRTYP=PREPROC` and `DATA-TYP=COMPARISON`
 
 ### Output
 Wavelength map with polynomial coefficients and aberration correction in `output/wave/` directory
-
----
-
-## runPL_create_wavelengthMap.py
-Python script to create a Wavelength Map from preprocessed data.  
-Identifies emission lines and maps them to pixel positions for wavelength calibration.
-
-### Usage
-```bash
-python runPL_create_wavelengthMap.py [options] [files...]
-
-# Examples:
-python runPL_create_wavelengthMap.py --wave_list="[753.6, 748.9, 743.9]" *.fits
-python runPL_create_wavelengthMap.py --poly_degree=3 data/*.fits
-```
-
-### Input
-Files with `X_FIRTYP=WAVE`
-
-### Output
-Wavelength map for spectral calibration
 
 ---
 
