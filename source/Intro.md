@@ -1,6 +1,7 @@
-# Introduction
+# FIRST-PL - Fibered Imager foR a Single Telescope - Photonic Lantern
+---
 
-The FirstLP instrument is a photonic device operating at visible wavelengths, installed on the SCExAO instrument on the 8m SUBARU telescope (Hawaii).
+The FIRST-PL instrument is a photonic device operating at visible wavelengths, installed on the SCExAO instrument on the 8m SUBARU telescope (Hawaii).
 
 ![](FIRST-PL_drawing.png)
 
@@ -18,9 +19,9 @@ Three modes are currently offered. In 30 minutes of observations, the following 
 
 | Mode | Spectral Resolution | Bandwidth | Spatial/Astrometric Parameter | Field of View | Contrast | R mag (typical) |
 |------|-------------------|-----------|------------------------------|---------------|----------|-------|
-| **Spectro-astrometry** | 3000 | 600-790 nm | 100 µas (astrometric accuracy) | - | - | 4 mag |
-| **Imaging on-axis** | Broadband | 600-790 nm | 20 mas (spatial resolution) | 130 mas | 10 | 11 mag |
-| **High contrast off-axis imaging** | Broadband | 600-790 nm | 100 mas (inner working angle) | 1000 mas | 1000 | 6 mag |
+| **Spectro-astrometry** | 3000 | 630-780 nm | 100 µas (astrometric accuracy) | - | - | 4 mag |
+| **Imaging on-axis** | Broadband | 630-780 nm | 20 mas (spatial resolution) | 130 mas | 10 | 11 mag |
+| **High contrast off-axis imaging** | Broadband | 630-780 nm | 100 mas (inner working angle) | 1000 mas | 1000 | 6 mag |
 
 Performance decreases for fainter targets. The plot below shows the achievable astrometric accuracy and contrast dynamic range as a function of R magnitude. These results are based on a combination of analytical models and empirical measurements:
 ![](astrometric_contrast_vs_Rmag.png)
