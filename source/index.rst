@@ -38,7 +38,7 @@ Welcome to FIRST-PL's documentation!
    :caption: Pipeline
    
    pipeline_intro
-   pipeline_recipies
+   pipeline_recipes
    pipeline_utility_tools
 
 .. toctree::
