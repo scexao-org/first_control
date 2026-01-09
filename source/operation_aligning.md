@@ -1,11 +1,11 @@
-# Aligning the lantern on source
+# Aligning the lantern to the source
 
 ## 1. Moving the photonic lantern manually with Zabers
 
 The Zaber motors move the lantern physically in the focal plane 
 
 Commands to check and set the Zaber position:
-- `zab.get_position()`: retrive the (x, y) position of the zaber 
+- `zab.get_position()`: retrieve the (x, y) position of the zaber 
 - `zab.move(x, y)`: move the zaber to x, y absolute position
 - `zab.delta_move(dx, dy)`: perform a move of dx and dy relative to current position
 
@@ -15,11 +15,11 @@ Note that all these commands take and return values in units of zaber steps.
 
 ### 2.1 Modulation with the Tip-Tilt
 
-The tip/tilt mirror can be used to quickly acquire a 2D scan to locate the target and centre the PL. A scan is obtained using:
+The tip/tilt mirror can be used to quickly acquire a 2D scan to locate the target and center the PL. A scan is obtained using:
 ```
 pls.acq.get_acquisition_scan(wait_until_done = False, tint = 0.1, mod_scale = 200)
 ```
-The `mod_scale` givens the size of the scan (in mas) and `tint` is the DIT time in seconds.
+The `mod_scale` gives the size of the scan (in mas) and `tint` is the DIT time in seconds.
 
 This function will return immediately. Look at the fitslogger and fitsmerger terminals to know when the scan is done and the fits file is saved.
 
@@ -37,12 +37,12 @@ To convert the tip/tilt x,y position retrieved from the flux map to zaber coordi
 x_zab, y_zab = pls.geo.tt_to_zab(x_tt, y_tt)
 ```
 
-This can be used to recenter the zaber to the correct poisition using a "delta_move":
+This can be used to recenter the zaber to the correct position using a "delta_move":
 ```
 zab.delta_move(-x_zab, -y_zab)
 ```
 
-This process can be iterated until proper centering is achieved. There is also a dedicated method to automatically performs these steps:
+This process can be iterated until proper centering is achieved. There is also a dedicated method to automatically perform these steps:
 ```
 pls.acq.center_PL(tint = 0.1, init_scale = 200, n_iterations = 2)
 ```
@@ -56,7 +56,7 @@ Use:
 ```
 pls.focal.start()
 ```
-It will start the focal plane camera and move it into the beam. The command `pls.focal.stop()` is doing the opposite.
+It will start the focal plane camera and move it into the beam. The command `pls.focal.stop()` does the opposite.
 
 ### 3.2 Acquire a dataset
 
@@ -64,7 +64,7 @@ Use:
 ```
 pls.focal.get_images_triggered()
 ```
-It will store a bunch of fits files that are then used to find the position of the target.
+It will store multiple FITS files that are then used to find the position of the target.
 
 To display the flux from the most recent FITS file and retrieve the x, y position of the star:
 ```
@@ -78,7 +78,7 @@ To convert the tip/tilt x,y position retrieved from the flux map to zaber coordi
 x_zab, y_zab = pls.geo.fcam_to_zab(x_fcam,y_fcam)
 ```
 
-This can be used to recenter the zaber to the correct poisition using a "delta_move":
+This can be used to recenter the zaber to the correct position using a "delta_move":
 ```
 zab.delta_move(-x_zab, -y_zab)
 ```

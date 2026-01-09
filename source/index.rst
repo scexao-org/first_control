@@ -28,7 +28,7 @@ Welcome to FIRST-PL's documentation!
    
    operation_setup
    operation_bon
-   operation_centering
+   operation_aligning
    operation_acquiring
    operation_offaxis
    operation_eon
@@ -37,6 +37,7 @@ Welcome to FIRST-PL's documentation!
    :maxdepth: 2
    :caption: Pipeline
    
+   pipeline_intro
    pipeline_recipies
    pipeline_utility_tools
 
