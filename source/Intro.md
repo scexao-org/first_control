@@ -1,4 +1,5 @@
-# FIRST-PL - Fibered Imager foR a Single Telescope - Photonic Lantern
+#  FIRST-PL <br/>
+## Fibered Imager foR a Single Telescope - Photonic Lantern
 ---
 
 The FIRST-PL instrument is a photonic device operating at visible wavelengths, installed on the SCExAO instrument on the 8m SUBARU telescope (Hawaii).
