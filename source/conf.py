@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'first_control'
+project = 'first-pl'
 copyright = '2024, Sebastien Vievard'
 author = 'Sebastien Vievard'
 
@@ -37,7 +37,7 @@ extensions = [
     "sphinx_copybutton"
 ]
 
-html_title = "FIRST control"
+html_title = "FIRST-PL"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
