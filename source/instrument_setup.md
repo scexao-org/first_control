@@ -23,7 +23,11 @@ Launch the displays of the lives (each must be launched in their own terminal) :
 
 `firstcam -z 2 &` <br />                         # Start the camera viewer <br />
 
-## 2. Display live flux injection map
+## 2. starting the focal plane camera viewer
+
+`shmImshow.py fpupcam` <br />                    # Start the camera viewer <br />
+
+## 3. Display live flux injection map
 
 Opti flux live, a new image is generated for every new saved cube :
 
@@ -31,7 +35,7 @@ Opti flux live, a new image is generated for every new saved cube :
 `firstpl_opti_show` : display the content of the shared memory<br />
 Reconstructed image live : will reconstruct an image for every frame viewed by the camera using the coupling map located in /mnt/datazpool/PL/calibration_files/<br />
 
-## 3. Display live image reconstruction
+## 4. Display live image reconstruction
 
 `firstpl_rtd_start` : create a reconstruction and saves it inside a shared memory (must be restarted for every new coupling map).<br />
 `firstpl_rtd_show` : display the content of the shared memory<br />
