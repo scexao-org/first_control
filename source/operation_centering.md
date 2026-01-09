@@ -27,19 +27,19 @@ This function will return immediately. Look at the fitslogger and fitsmerger ter
 
 To display the flux from the most recent FITS file and retrieve the x, y position of the star:
 ```
-x,y = pls.ins.opti_flux()
+x_tt,y_tt = pls.ins.opti_flux()
 ```
 
 ### 2.3 Centering the photonic lantern
 
 To convert the tip/tilt x,y position retrieved from the flux map to zaber coordinates:
 ```
-xzab, yzab = pls.geo.tt_to_zab(x, y)
+x_zab, y_zab = pls.geo.tt_to_zab(x_tt, y_tt)
 ```
 
 This can be used to recenter the zaber to the correct poisition using a "delta_move":
 ```
-zab.delta_move(-xzab, -yzab)
+zab.delta_move(-x_zab, -y_zab)
 ```
 
 This process can be iterated until proper centering is achieved. There is also a dedicated method to automatically performs these steps:
@@ -68,18 +68,18 @@ It will store a bunch of fits files that are then used to find the position of t
 
 To display the flux from the most recent FITS file and retrieve the x, y position of the star:
 ```
-xfcam,yfcam = pls.ins.opti_flux_fcam()
+x_fcam,y_fcam = pls.ins.opti_flux_fcam()
 ```
 
 ### 3.3 Centering the photonic lantern
 
 To convert the tip/tilt x,y position retrieved from the flux map to zaber coordinates:
 ```
-xzab, yzab = pls.geo.fcam_to_zab(xfcam,yfcam)
+x_zab, y_zab = pls.geo.fcam_to_zab(x_fcam,y_fcam)
 ```
 
 This can be used to recenter the zaber to the correct poisition using a "delta_move":
 ```
-zab.delta_move(-xzab, -yzab)
+zab.delta_move(-x_zab, -y_zab)
 ```
 
