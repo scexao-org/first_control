@@ -8,18 +8,77 @@ The user will give the files as arguments to each script. If no argument is give
 
 ![](overview.png) 
 
+# Installation
+
+There are two ways to install and use the FIRST Pipeline:
+
+## Option 1: Development Installation (Recommended)
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/scexao-org/first_pipeline.git
+   cd first_pipeline
+   ```
+
+2. **Install the package in development mode:**
+   ```bash
+   pip install -e .
+   ```
+   
+3. **Install ESO FITS Tools (required for `runPL_dfits`):**
+   ```bash
+   # On macOS with Homebrew:
+   brew install cfitsio
+   
+   # Or install from source:
+   # See: https://github.com/granttremblay/eso_fits_tools
+   ```
+
+## Option 2: Using Scripts Directly
+
+If you prefer to run scripts directly without package installation:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/scexao-org/first_pipeline.git
+   cd first_pipeline
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run scripts from the first_pipeline directory:**
+   ```bash
+   # Run from the first_pipeline/ directory
+   python runPL_changeKeyword.py [options] [files...]
+   python runPL_create_pixelMap.py [options] [files...]
+   # etc.
+   ```
+
+## Note: 
+
+- **Option 1** allows you to run commands from anywhere as `runPL_changeKeyword`, `runPL_create_pixelMap`, etc.
+- **Option 2** requires you to be in the `first_pipeline/` directory and use `python script_name.py`
+
 # Pipeline Structure
 
 ## Directory Organization
+
 ```
 first_pipeline/
+├── __init__.py       # Package initialization
+├── setup.py          # Package setup and installation
+├── requirements.txt  # Python dependencies
 ├── classes/          # Data structure classes
-│   ├── runPL_class_pixelMap.py
+│   ├── __init__.py
+│   ├── runPL_class_couplingMap.py
 │   ├── runPL_class_dataCube.py
-│   ├── runPL_class_flatMap.py
-│   ├── runPL_class_waveMap.py
-│   └── runPL_class_couplingMap.py
+│   ├── runPL_class_pixelMap.py
+│   └── runPL_class_flatMap.py
 ├── libraries/        # Utility functions
+│   ├── __init__.py
 │   ├── runPL_library_basic.py
 │   ├── runPL_library_io.py
 │   ├── runPL_library_linalg.py
