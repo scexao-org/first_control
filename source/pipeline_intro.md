@@ -116,6 +116,6 @@ first_pipeline/
 - **Python dependencies**: 
   - Core scientific stack: `numpy`, `scipy`, `matplotlib`
   - Astronomy libraries: `astropy`, `astroplan` 
-  - Utility libraries: `tqdm` (progress bars), `peakutils` (peak detection)
+  - Utility libraries: `tqdm` (progress bars)
 - **External tools**: `dfits` from ESO FITS Tools for FITS inspection
 - **FITS keywords**: Scripts rely on specific header keywords for file selection
