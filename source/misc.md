@@ -45,7 +45,7 @@ camstart first                          # Starts the FIRST-PL Hamamatsu camera  
 
 ## Start the focal plane camera
 
-Start the focal plane camera using `camsart first_pupil`.  <br />
+Start the focal plane camera using `camstart first_pupil`.  <br />
 Start the viewer with `shmImshow.py fpupcam` (temprorary viewer). 
 Insert the pickoff using `firstpl_fp`
 

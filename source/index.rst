@@ -26,11 +26,8 @@ Welcome to FIRST-PL's documentation!
    :maxdepth: 2
    :caption: Operations
    
-   operation_setup
    operation_bon
-   operation_aligning
    operation_acquiring
-   operation_offaxis
    operation_eon
 
 .. toctree::
