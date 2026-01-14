@@ -4,7 +4,7 @@
 
 ## Summary
 
-All operation are done with a python script that is lauched using the command:
+All operations are done with a python script that is lauched using the command:
 ```
 firstpl_controller_start
 ```
