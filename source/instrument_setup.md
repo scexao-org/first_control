@@ -87,7 +87,7 @@ The fitslogger is probably the most important thing to monitor carefully during 
 
 For that, see section "Operations"
 
-# Optical setup to the Photonic Lantern
+# Optical setup
 
 ## 1. Pick off mirror
 On scexao2 computer, to know the status of the pick off mirror: <br />
