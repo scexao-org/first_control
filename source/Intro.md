@@ -1,4 +1,10 @@
 #  FIRST-PL <br/>
+
+| University of Hawai'i | LIRA / Paris Observatory | Subaru Telescope |
+|:---------------------:|:-----------------:|:----------------:|
+| ![UH Logo](logo_uh.png) | ![Paris Obs Logo](logo_lira.png) | ![Subaru Logo](logo_subaru.png) |
+
+
 ### Fibered Imager foR a Single Telescope - Photonic Lantern
 ---
 
