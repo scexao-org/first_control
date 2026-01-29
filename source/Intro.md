@@ -1,7 +1,5 @@
-#  FIRST-PL <br/>
+#  FIRST-PL 
 
-| University of Hawai'i | LIRA / Paris Observatory | Subaru Telescope |
-|:---------------------:|:-----------------:|:----------------:|
 | ![UH Logo](logo_uh.png) | ![Paris Obs Logo](logo_lira.png) | ![Subaru Logo](logo_subaru.png) |
 
 
