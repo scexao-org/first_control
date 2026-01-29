@@ -23,7 +23,7 @@ The 19 outputs of the Photonic Lantern feed a mid resolution spectrograph (R~3,0
 | Operating wavelength | 620 - 780 nm |  |
 | Spectral resolution | R~3,000 |  |
 | Spatial resolution | 25 mas |  |
-| Field of view | 80 mas @ f/8 | Optimal injection efficiency is for a focal ratio of 8, <br> providing a field of view of 80 mas.The field of view is defined as the area where the <br> injection efficiency drops to 50% compared to the center of the field. |
+| Field of view | 80 mas @ f/8 | Optimal injection efficiency is for a focal ratio of 8, <br> providing a field of view of 80 mas. The field of view is <br> defined as the area where the injection efficiency <br> drops to 50% compared to the center of the field. |
 | Exposure times | 7.2us - 1800 s. | Fast or Slow readout modes possible |
 
 
