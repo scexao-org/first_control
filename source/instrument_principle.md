@@ -33,7 +33,7 @@ The 19 outputs of the Photonic Lantern feed a mid resolution spectrograph (R~3,0
 
 
 | <strong>Capability</strong> | Sub-λ/D measurement of photocenter position as a function of wavelength, <br> enabling spatial information retrieval at scales well below the diffraction <br> limit.  |
-| - | - | - |
+| - | - |
 | <strong>Science applications</strong> | - Mapping accretion signatures on protoplanets via Hα emission<br> - Detecting asymmetries in stellar environments<br>- Measuring spatial distribution of spectral features  |
 | <strong>Data requirements</strong> | - <strong>Primary:</strong> FIRST-PL camera acquisition <br>- <strong>Auxiliary (required):</strong> Focal plane images from at least 1 of 2 additional  <br> cameras (SCExAO/VAMPIRES and/or SCExAO internal IR camera)  |
 
