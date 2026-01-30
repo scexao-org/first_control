@@ -40,7 +40,7 @@ The 19 outputs of the Photonic Lantern feed a mid resolution spectrograph (R~3,0
 
 ### Mode 1: Spectro-astrometry
 
-| **Capability** | Sub-$\lambda/D$ measurement of photocenter position as a function of wavelength, <br> enabling spatial information retrieval at scales well below the diffraction <br> limit.  |
+| **Capability** | Sub-λ/D measurement of photocenter position as a function of wavelength, <br> enabling spatial information retrieval at scales well below the diffraction <br> limit.  |
 | - | - |
 | **Science applications** | - Mapping accretion signatures on protoplanets via $H\alpha$ emission<br> - Detecting asymmetries in stellar environments<br>- Measuring spatial distribution of spectral features  |
 | **Data requirements** | - **Primary:** FIRST-PL camera acquisition <br>- **Auxiliary (required):** Focal plane images from at least 1 of 2 additional  <br> cameras (SCExAO/VAMPIRES and/or SCExAO internal IR camera)  |
@@ -49,7 +49,7 @@ The 19 outputs of the Photonic Lantern feed a mid resolution spectrograph (R~3,0
 
 ### Mode 2: On-Axis Imaging
 
-| **Capability** | $\lambda/D$ spatial resolution within the field of view of the photonic lantern <br> (~130 mas), with modest contrast capabilities (contrast ~10). |
+| **Capability** | λ/D spatial resolution within the field of view of the photonic lantern <br> (~130 mas), with modest contrast capabilities (contrast ~10). |
 | - | - |
 | **Science applications** | - Resolving stellar surfaces and features<br> - Detecting close companions within the field of view<br> - Characterizing compact circumstellar environments |
 | **Data requirements** | - **Primary:** FIRST-PL camera acquisition <br>- **Auxiliary (optional):** Telemetry from SCExAO for additional <br> wavefront/PSF monitoring |
