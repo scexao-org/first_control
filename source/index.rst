@@ -14,6 +14,7 @@ Welcome to FIRST-PL's documentation!
    
    Intro
    instrument_principle
+   observing_procedure
    instrument_performance
    
 .. toctree::

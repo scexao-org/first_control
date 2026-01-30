@@ -6,7 +6,7 @@ Observations of Altair during S24B allowed us to estimate the injection efficien
 We present here the results in the form of histograms representing the injection efficiency and total throughput of the instrument (throughput from top of the atmosphere down to the detector) computed on the Altair data at two wavelengths (642nm and 680nm) : 
 
 <center>
-<img src="20240726Altair_throughput_combined2025.png" alt="On-sky total throughput and injection efficiency performance at 642 nm (top) and 680 nm (bottom)" width="70%">
+<img src="./20240726Altair_throughput_combined2025.png" alt="On-sky total throughput and injection efficiency performance at 642 nm (top) and 680 nm (bottom)" width="70%">
 </center>
 
 During this observation sequence, the Strehl ratio was measured at 20-30% at 750 nm. At 642 nm, the average injection efficiency was 21% (with a maximum of 36%), compared to ~60% achieved in laboratory conditions. At 680 nm, the average injection efficiency was 40% (with a maximum of 55%).
@@ -30,7 +30,5 @@ Spectro-astrometry enables the measurement of photocenter positions as a functio
 Recent observations of the β CMi decretion disk (Kim et al 2025) demonstrate the operational capabilities of this mode. Figure 7 shows the measured photocenter positions as a function of wavelength across the Hα line, while the right panels decompose this signal along the disk's major and minor axes.
 
 <center>
-```spectroastroprecision.png
-```
-*Spectroastrometry of β-CMi, a classical Be star with an Hα decretion disk, done with the 19-port PL feeding the R~3,000 spectrograph. (Left) Photocenter position as a function of wavelength (velocity). (Right) Spectroastrometric signatures along the disk major axis (top) and minor axis (bottom). Credit: Kim et al., 2025 (2025)
+<img src="./spectroastroprecision.png" alt="Spectroastrometry of β-CMi, a classical Be star with an Hα decretion disk, done with the 19-port PL feeding the R~3,000 spectrograph. (Left) Photocenter position as a function of wavelength (velocity). (Right) Spectroastrometric signatures along the disk major axis (top) and minor axis (bottom). Credit: Kim et al., 2025 (2025)" width="70%">
 </center>
