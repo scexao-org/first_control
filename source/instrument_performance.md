@@ -1,26 +1,39 @@
 # Instrument performance
 
-## Injection efficiency
+## On-sky efficiency
 
-### Injection efficiency versus focal ratio
+Observations of Altair during S24B allowed us to estimate the injection efficiency of the PL with the newly installed AO3k - NIRPyWFS. 
+We present here the results in the form of histograms representing the injection efficiency and total throughput of the instrument (throughput from top of the atmosphere down to the detector) computed on the Altair data at two wavelengths (642nm and 680nm) : 
 
-Below graph shows the on-axis, maximum and average injection efficiency of the Photonic Lantern, at 642 nm, for various focal ratios. The measurements were performed on the bench without any turbulence. The estimated Strehl ratio at 750 nm (from VAMPIRES) was about 90%.
+<center>
+```20240726Altair_throughput_combined2025.png
+:width: 500 px
+```
+*On-sky total throughput and injection efficiency performance at 642 nm (top) and 680 nm (bottom)
+</center>
 
-![](coupling_plot_corrected.png)
+During this observation sequence, the Strehl ratio was measured at 20-30% at 750 nm. At 642 nm, the average injection efficiency was 21% (with a maximum of 36%), compared to ~60% achieved in laboratory conditions. At 680 nm, the average injection efficiency was 40% (with a maximum of 55%).
 
-*Figure 3 : Variation of the injection effciency measured at 642 nm as a function of the focal ratio (bottom horizontal axis), or as a function of the ratio between the PSF size and MFD of the PL (top horizonal axis). For each focal ratio experimentally tested, we represent the on-axis injection efficiency, the maximum efficiency and the average over the whole scanned area. The field of view projected on-sky is also plotted with red crosses (right axis).*
 
-The optimal injection efficiency was recorded for a focal ratio of 8. The current default setup of the Photonic Lantern injection module is f/8.
+## Sensitivity
 
-### Injection efficiency versus Strehl Ratio
+The detector noise consists of the readout noise (~0.25 e⁻/pixel in standard/slow readout mode) and the shot noise of the stray light (currently 0.03 e⁻/pixel/s). Assuming the most extreme case of a 10-s frame time, the total noise is sqrt(0.3+0.25^2)=0.6 e⁻/pixel per 10 s. Each wavelength channel is spread over 5 pixels (perpendicular to the dispersion axis), so the noise per wavelength channel is 1.35 e⁻ per 10 s.
 
-To assess the injection efficiency into the PL in the presence of uncorrected atmospheric turbulence, turbulence is injected onto the SCExAO DM with various levels of upstream atmospheric turbulence correction. Turbulence screens are based on Kolmogorov spectrum with inner and outer scales, adopting the frozen flow approximation for temporal evolution, and are the closest to what we expect during on-sky observations. We fixed the wind speed at 10 m/s and modified the turbulence amplitude to vary the Strehl ratio. In order to study the behavior of the PL in various conditions, we varied the spatial frequency content of the simulated turbulence. We identified three distinct cases by adjusting the inner and outer scales of the turbulence:
-- Turbulence following the Kolmogorov power spectrum (inner scale = 0.01 meter, outer scale = 20 meters), the closest to what we expect on-sky
-- Turbulence dominated by high spatial frequencies (inner scale = 0.01 meter, outer scale = 1 meter), which would correspond to an ExAO case where low order aberrations are well corrected but there is still remaining high order aberrations (for example if the DM lacks actuators). 
-- Turbulence dominated by the low spatial frequencies (inner scale = 10 meters, outer scale = 100 meters), which would correspond to a more classic AO loop performing poorly on low order aberrations (for example, during the observation of a faint star).
+The signal corresponds to the number of detected photons per spectral element. It can be computed analytically using a spectral resolution of 3000, 19 outputs, 3 wavelength channels per resolution element and an overall transmission of 1% (telescope + instrument + detector QE). For a target of magnitude 0, this yields approximately 1.5×10⁶ e⁻ per 10 s.
 
-The injection module focal ratio was set to f/8. Results are shown on the below graph.
+The limit of sensitivity is reached when the signal-to-noise ratio (SNR) decreases below 5 per spectral element. It happens when we can detect 25 photons. It can be computed analytically using a spectral resolution of 3000, 19 outputs, 3 wavelength channels per resolution element and an overall transmission of 1% (telescope + instrument + detector QE). For a target of magnitude 12, this yields approximately 25 e⁻ per 10 s. In this case, the SNR dominates with respect to the detector noise (5e- compared to the 1.35e- stated above).
+The sensitivity of the instrument is therefore R=12. It can be slightly increased by having integration times longer than 10s, but it is not recommended for normal operations.
+Moreover, although an SNR of 5 is sufficient to form an image, significantly more photons are required to achieve high contrast and high astrometric accuracy. The astrometric accuracy improves roughly with the square of the number of detected events. To reach an accuracy 100 times better than the diffraction limit requires an SNR of about 10⁴. Such an SNR can only be reached in approximately 30 minutes on a star of magnitude R ≈ 5.
 
-![](PL_turbulence_test_paper_final.png)
 
-*Figure 4 : Relationship between the injection efficiency at 642 nm and the Strehl ratio measured at 750 nm for various atmospheric conditions. The turbulence is applied on the SCExAO DM and the flux is recorded at the 19-port PL output. The presented SMF results are simulations from Lin et al. (2021), where the simulated turbulence screens were following the Kolmogorov power spectrum.*
+## Spectroastrometric precision
+
+Spectro-astrometry enables the measurement of photocenter positions as a function of wavelength, providing spatial information at scales well below the diffraction limit. 
+
+Recent observations of the β CMi decretion disk (Kim et al 2025) demonstrate the operational capabilities of this mode. Figure 7 shows the measured photocenter positions as a function of wavelength across the Hα line, while the right panels decompose this signal along the disk's major and minor axes.
+
+<center>
+```spectroastroprecision.png
+```
+*Spectroastrometry of β-CMi, a classical Be star with an Hα decretion disk, done with the 19-port PL feeding the R~3,000 spectrograph. (Left) Photocenter position as a function of wavelength (velocity). (Right) Spectroastrometric signatures along the disk major axis (top) and minor axis (bottom). Credit: Kim et al., 2025 (2025)
+</center>
