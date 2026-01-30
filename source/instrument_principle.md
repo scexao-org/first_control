@@ -38,7 +38,32 @@ The 19 outputs of the Photonic Lantern feed a mid resolution spectrograph (R~3,0
 | <strong>Data requirements</strong> | - <strong>Primary:</strong> FIRST-PL camera acquisition <br>- <strong>Auxiliary (required):</strong> Focal plane images from at least 1 of 2 additional  <br> cameras (SCExAO/VAMPIRES and/or SCExAO internal IR camera)  |
 
 
+### Mode 1: Spectro-astrometry
 
+| **Capability** | Sub-$\lambda/D$ measurement of photocenter position as a function of wavelength, <br> enabling spatial information retrieval at scales well below the diffraction <br> limit.  |
+| - | - |
+| **Science applications** | - Mapping accretion signatures on protoplanets via $H\alpha$ emission<br> - Detecting asymmetries in stellar environments<br>- Measuring spatial distribution of spectral features  |
+| **Data requirements** | - **Primary:** FIRST-PL camera acquisition <br>- **Auxiliary (required):** Focal plane images from at least 1 of 2 additional  <br> cameras (SCExAO/VAMPIRES and/or SCExAO internal IR camera)  |
+| **On-sky calibration** | - Self-calibrating via tip-tilt telemetry from auxiliary cameras<br> - No separate calibrator star observation required |
+| **Off-sky calibration** | - Wavelength calibration (Neon lamp)<br> - Flat field calibration (Halogen lamp)<br> - Dark frames |
+
+### Mode 2: On-Axis Imaging
+
+| **Capability** | $\lambda/D$ spatial resolution within the field of view of the photonic lantern <br> (~130 mas), with modest contrast capabilities (contrast ~10). |
+| - | - |
+| **Science applications** | - Resolving stellar surfaces and features<br> - Detecting close companions within the field of view<br> - Characterizing compact circumstellar environments |
+| **Data requirements** | - **Primary:** FIRST-PL camera acquisition <br>- **Auxiliary (optional):** Telemetry from SCExAO for additional <br> wavefront/PSF monitoring |
+| **On-sky calibration** | - Calibrator star observation (similar magnitude to target or brighter) |
+| **Off-sky calibration** | - Wavelength calibration (Neon lamp)<br> - Flat field calibration (Halogen lamp)<br> - Dark frames |
+
+### Mode 3: Off-Axis Imaging
+
+| **Capability** | Extended field of view beyond the Photonic Lantern's intrinsic ±20 mas, <br> enabling observations at separations up to ~1000 mas. Achieves <br> contrast ratios >1000 at separations ≥100 mas. |
+| - | - |
+| **Science applications** | - Characterizing faint companions<br> - Wide binary systems<br> - High contrast imaging |
+| **Data requirements** | - **Primary:** FIRST-PL camera acquisition <br>- **Auxiliary (optional):** Telemetry from SCExAO for additional <br> wavefront/PSF monitoring |
+| **On-sky calibration** | - On-axis pointing on primary star (serves as calibration)<br> - Interleaved on-axis/off-axis observations recommended |
+| **Off-sky calibration** | - Wavelength calibration (Neon lamp)<br> - Flat field calibration (Halogen lamp)<br> - Dark frames |
 
 <table
     border="1px"
