@@ -19,6 +19,9 @@ Record the Photonic Lantern data ***AND*** either the Visible ***or*** IR focal 
 
 1. Point the telescope to the calibrator
 2. Acquire data while modulating the tip/tilt mirror
+```{image} 1_obs.png
+:width: 50 px
+```
 <img src="1_obs.png" width="20%">
 3. Point the telescope to the science target
 4. Acquire data while modulating the tip/tilt mirror
