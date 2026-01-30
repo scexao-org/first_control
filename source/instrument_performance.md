@@ -7,7 +7,7 @@ We present here the results in the form of histograms representing the injection
 
 ```{image} 20240726Altair_throughput_combined2025.png
 :width: 800 px
-```<br>
+```
 *On-sky total throughput and injection efficiency performance at 642 nm (top) and 680 nm (bottom)*
 
 During this observation sequence, the Strehl ratio was measured at 20-30% at 750 nm. At 642 nm, the average injection efficiency was 21% (with a maximum of 36%), compared to ~60% achieved in laboratory conditions. At 680 nm, the average injection efficiency was 40% (with a maximum of 55%).
