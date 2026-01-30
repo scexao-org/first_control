@@ -6,7 +6,7 @@ Observations of Altair during S24B allowed us to estimate the injection efficien
 We present here the results in the form of histograms representing the injection efficiency and total throughput of the instrument (throughput from top of the atmosphere down to the detector) computed on the Altair data at two wavelengths (642nm and 680nm) : 
 
 ```{image} 20240726Altair_throughput_combined2025.png
-:width: 300 px
+:width: 800 px
 ```
 *On-sky total throughput and injection efficiency performance at 642 nm (top) and 680 nm (bottom)*
 

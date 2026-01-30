@@ -13,7 +13,7 @@ Record the Photonic Lantern data ***AND*** either the Visible ***or*** IR focal 
 
 **In this mode, the calibrator is a different star from the sceince target** <br>
 
-***Choice of calibrator:*** At least as bright as the sceince target
+***Choice of calibrator:*** At least as bright as the science target
 
 **Observation procedure:**
 
