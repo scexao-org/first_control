@@ -51,3 +51,15 @@ Record the Photonic Lantern data ***AND*** either the Visible ***or*** IR focal 
 ```
 
 *Overheads for calibrator :* enter the command for offset in the instrument control
+
+# Overheads
+
+| Action | Overhead |
+| - | - |
+| Slewing Telescope | ~<8 minutes> |
+| Closing AO3k loop | 60 seconds |
+| Closing SCExAO loop | 60 seconds |
+| Send light to FIRST-PL | 10 seconds |
+| Optimizing injection into FIRST-PL | 2 minutes |
+| Start acquisition | < 1 minute |
+| Stopping AO3k + SCExAO loops | 10 seconds |
