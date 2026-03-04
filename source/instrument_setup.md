@@ -21,7 +21,7 @@ Launch the displays of the lives (each must be launched in their own terminal) :
 
 ## 1. start PL camera viewer
 
-`firstcam -z 2 &` <br />                         # Start the camera viewer <br />
+`firstcam -z 1 &` <br />                         # Start the camera viewer <br />
 
 ## 2. starting the focal plane camera viewer
 
