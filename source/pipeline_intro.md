@@ -8,11 +8,10 @@ The user will give the files as arguments to each script. If no argument is give
 
 ![](overview.png) 
 
+> **Note**: For the most up-to-date information, see the [official README](https://github.com/scexao-org/first_pipeline/blob/main/README.md) in the repository.
+
+
 # Installation
-
-There are two ways to install and use the FIRST Pipeline:
-
-## Option 1: Development Installation (Recommended)
 
 1. **Clone the repository:**
    ```bash
