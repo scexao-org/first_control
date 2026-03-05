@@ -172,7 +172,7 @@ The tip/tilt mirror can be used to observe an off-axis target. In order to do th
 
 The LST on the electronics is synchronized to the computer using:
 ```
-scripts.set_lst_now(location = "subaru")
+scripts.set_lstnow(location = "subaru")
 ```
 This will calculate the LST at the given location using astropy, and send it to the electronics. 
 
