@@ -132,7 +132,7 @@ pls.acq.set_mode_triggered()
 
 Once the system is in triggered mode, data should be acquired only using the dedicated command:
 ```
-pls.acq.get_images(nimages = 595, ncubes = 1, tint = 0.1, mod_sequence = 3, mod_scale = 30, objX = 0 , objY = 0)
+pls.acq.get_images(nimages = 150, ncubes = 1, tint = 0.1, mod_sequence = 2, mod_scale = 30, objX = 0 , objY = 0)
 ```
 The parameters are as follows:
 - `nimages`: Number of DITs (ideally should be a factor of the sequence length)
