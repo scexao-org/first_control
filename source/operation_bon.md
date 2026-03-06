@@ -47,7 +47,7 @@ pls.bon.startup_fitslogger()
 
 The rolling mode can be activated (see acquiring data):
 ```
-pls.acq.set_mode_rolling(x = 0, y = 0, open_loop = True)
+pls.acq.set_mode_rolling(x = 0, y = 0, open_loop = False)
 ```
 
 To put the system in triggered mode, run:
