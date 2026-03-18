@@ -24,19 +24,22 @@ These codes will look for every parameters of readout mode and exposition time s
 Alternatively, darks/flats with set parameters can be saved with :
 ```
 pls.eon.save_single_dark(detmod = {str, readout mode value to use}, exptime = {float, exposition time to use}, block_light_on_the_bench=True)
-pls.eon.save_single_flat(detmod = {str, readout mode value to use}, exptime = {float, exposition time to use})
-Note : block_light_on_the_bench is False by default, setting it to true will block light on other instruments.
 ```
+```
+pls.eon.save_single_flat(detmod = {str, readout mode value to use}, exptime = {float, exposition time to use})
+```
+Note : block_light_on_the_bench is False by default, setting it to true will block light on other instruments.
 
 
 ## Don't forget
 
 - After logging to sc20 :
     - If you have used the superK: `superk power off`
-    - If you have used the calibration unit: `nps 2 5 off` to shutdown the flat lamp, and `first_fp out` to remove the calibration pickup mirror
-    - `first_pickoff out` and `vis_block in`
+    - If you have used the FIRST internal calibration unit: `nps 2 5 off` to shutdown the flat lamp, 
+    - and `first_pickoff out` to remove the calibration pickup mirror
+    - Ending with `firstpl_pickoff out` and `vis_block in` is a good reflex
 
 A quick command to be sure is : 
 ```
-ssh sc0 " superk power off; first_pickoff out; firstpl_pickoff out; vis_block in; nps 2 5 off "
+ssh sc20 " superk power off; first_pickoff out; firstpl_pickoff out; vis_block in; nps 2 5 off "
 ```
