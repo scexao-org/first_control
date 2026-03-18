@@ -23,9 +23,11 @@ Launch the displays of the lives (each must be launched in their own terminal) :
 
 `firstcam -z 1 &` <br />                         # Start the camera viewer <br />
 
-## 2. starting the focal plane camera viewer
+## 2. starting the focal plane camera viewer 
 
 `shmImshow.py fpupcam` <br />                    # Start the camera viewer <br />
+
+Note: removed from operation
 
 ## 3. Display live flux injection map
 
