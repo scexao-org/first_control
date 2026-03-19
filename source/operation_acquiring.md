@@ -82,7 +82,7 @@ To change the parameters on the camera:
 
 The rolling mode is activated using the following method:
 ```
-pls.acq.set_mode_rolling(x = 0, y = 0, open_loop = False)
+pls.acq.set_mode_rolling()
 ```
 The `x` and `y` coordinates correspond to the location of the tip/tilt. Most of the time, this should be set to 0 to keep the alignement performed with the zabers. The `open_loop` parameter determines whether the electronics actively controls the tip/tilt to stay centered on 0 (i.e. "closed loop" regime, or `open_loop = True`), or completely deactivates the control loop (`open_loop = True`). 
 
@@ -103,10 +103,10 @@ The parameters are as follows:
 - `nimages`: Number of DITs (ideally should be a factor of the sequence length)
 - `ncubes`: Number of cubes to acquire
 - `tint`: Integration time of the camera
-- `mod_sequence`: See numbers above (must be between 1 and 7)
+- `mod_sequence`: See numbers above (must be between 1 and 10)
 - `mod_scale`: the radius of the modulation pattern (in mas)
 
-The modulation patterns are defined from -1 to 1 mas and scaled using the `mod_scale` parameter. There are currently 7 patterns implemented:
+The modulation patterns are defined from -1 to 1 mas and scaled using the `mod_scale` parameter. There are currently 10 patterns implemented:
 - **Number 1**: Fixed position at zero
 - **Number 2**: 150 points hexagonal
 - **Number 3**: 595 points hexagonal
