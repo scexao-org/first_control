@@ -48,41 +48,6 @@ pls.acq.center_PL(tint = 0.1, init_scale = 200, n_iterations = 2)
 ```
 Each iteration will be a zoomed iteration centered on the best position from the previous iteration. The function also takes a verification scan at the end (for a total of n_iterations+1 scans).
 
-## 3. Centering based on the display of the focal plane image
-
-### 3.1 Starting the focal plane camera
-
-Use:
-```
-pls.focal.start()
-```
-It will start the focal plane camera and move it into the beam. The command `pls.focal.stop()` does the opposite.
-
-### 3.2 Acquire a dataset
-
-Use:
-```
-pls.focal.get_images_triggered()
-```
-It will store multiple FITS files that are then used to find the position of the target.
-
-To display the flux from the most recent FITS file and retrieve the x, y position of the star:
-```
-x_fcam,y_fcam = pls.ins.opti_flux_fcam()
-```
-
-### 3.3 Centering the photonic lantern
-
-To convert the tip/tilt x,y position retrieved from the flux map to zaber coordinates:
-```
-x_zab, y_zab = pls.geo.fcam_to_zab(x_fcam,y_fcam)
-```
-
-This can be used to recenter the zaber to the correct position using a "delta_move":
-```
-zab.delta_move(-x_zab, -y_zab)
-```
-
 # Acquiring data
 
 ## Using wollaston or not
@@ -117,7 +82,7 @@ To change the parameters on the camera:
 
 The rolling mode is activated using the following method:
 ```
-pls.acq.set_mode_rolling(x = 0, y = 0, open_loop = True)
+pls.acq.set_mode_rolling()
 ```
 The `x` and `y` coordinates correspond to the location of the tip/tilt. Most of the time, this should be set to 0 to keep the alignement performed with the zabers. The `open_loop` parameter determines whether the electronics actively controls the tip/tilt to stay centered on 0 (i.e. "closed loop" regime, or `open_loop = True`), or completely deactivates the control loop (`open_loop = True`). 
 
@@ -132,16 +97,16 @@ pls.acq.set_mode_triggered()
 
 Once the system is in triggered mode, data should be acquired only using the dedicated command:
 ```
-pls.acq.get_images(nimages = 595, ncubes = 1, tint = 0.1, mod_sequence = 3, mod_scale = 30, objX = 0 , objY = 0)
+pls.acq.get_images(nimages = 150, ncubes = 1, tint = 0.1, mod_sequence = 2, mod_scale = 30, objX = 0 , objY = 0)
 ```
 The parameters are as follows:
 - `nimages`: Number of DITs (ideally should be a factor of the sequence length)
 - `ncubes`: Number of cubes to acquire
 - `tint`: Integration time of the camera
-- `mod_sequence`: See numbers above (must be between 1 and 7)
+- `mod_sequence`: See numbers above (must be between 1 and 10)
 - `mod_scale`: the radius of the modulation pattern (in mas)
 
-The modulation patterns are defined from -1 to 1 mas and scaled using the `mod_scale` parameter. There are currently 7 patterns implemented:
+The modulation patterns are defined from -1 to 1 mas and scaled using the `mod_scale` parameter. There are currently 10 patterns implemented:
 - **Number 1**: Fixed position at zero
 - **Number 2**: 150 points hexagonal
 - **Number 3**: 595 points hexagonal
@@ -149,8 +114,11 @@ The modulation patterns are defined from -1 to 1 mas and scaled using the `mod_s
 - **Number 5**: 625 points rectangular
 - **Number 6**: 313 points hexagonal
 - **Number 7**: 19 points hexagonal
+- **Number 8**: 60 points crenels
+- **Number 9**: 188 points crenels
+- **Number 10**: 10 points circle
 
-Modulation scale:
+Modulation typical scales:
 - **Lantern modulation**: Scale = 30, sampled at 16 units
 - **Piezo modulation**: Scale = 1000, using sequence number 5 (length = 25)
 
