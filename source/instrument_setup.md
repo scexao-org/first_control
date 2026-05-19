@@ -145,14 +145,20 @@ also on the sc20 computer
 The Halogen lamp is powered by the SCExAO NPS number 2. <br />
 
 To power on the source from sc20 computer : <br />
-`nps 2 5 on`
+`firstpl_halogen_power on`
 
 To power off the source from sc20 computer : <br />
-`nps 2 5 off`
+`firstpl_halogen_power off`
 
 ### 5.3 Operation of the Neon source
-The source is plugged on a windows NUC computer. The adress to log in that computer is : 133.40.163.196 (ask for the password) <br />
-(Need to ad an image of the software)
+The Neon lamp is also powered by the SCExAO NPS. <br />
+
+To power on the source from sc20 computer : <br />
+`firstpl_neon_power on`
+
+To power off the source from sc20 computer : <br />
+`firstpl_neon_power off`
+
 
 
 ## 6. Insertion of the wollaston

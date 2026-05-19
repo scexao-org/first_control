@@ -35,11 +35,11 @@ Note : block_light_on_the_bench is False by default, setting it to true will blo
 
 - After logging to sc20 :
     - If you have used the superK: `superk power off`
-    - If you have used the FIRST internal calibration unit: `nps 2 5 off` to shutdown the flat lamp, 
+    - If you have used the FIRST internal calibration unit: `firstpl_halogen_power off` to shutdown the flat lamp, and `firstpl_neon_power off` for the spectral lamp
     - and `first_pickoff out` to remove the calibration pickup mirror
     - Ending with `firstpl_pickoff out` and `vis_block in` is a good reflex
 
 A quick command to be sure is : 
 ```
-ssh sc20 " superk power off; first_pickoff out; firstpl_pickoff out; vis_block in; nps 2 5 off "
+ssh sc20 " superk power off; first_pickoff out; firstpl_pickoff out; vis_block in; firstpl_halogen_power off ;  firstpl_neon_power off"
 ```
