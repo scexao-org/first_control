@@ -35,7 +35,7 @@ Opti flux live, a new image is generated for every new saved cube :
 `firstpl_opti_show` : display the content of the shared memory<br />
 Reconstructed image live : will reconstruct an image for every frame viewed by the camera using the coupling map located in /mnt/datazpool/PL/calibration_files/<br />
 
-# Softwares setup
+# Software setup
 
 ## 1. Overview
 
@@ -90,7 +90,7 @@ For that, see section "Operations"
 # Optical setup
 
 ## 1. Pick off mirror
-On scexao2 computer, to know the status of the pick off mirror: <br />
+On sc20 computer, to know the status of the pick off mirror: <br />
 `firstpl_pickoff status`
 
 To put the pick off mirror in: <br />
@@ -98,11 +98,11 @@ To put the pick off mirror in: <br />
 
 To put the pick off mirror out: <br />
 `firstpl_pickoff out`
-also on the scexao2 computer
+also on the sc20 computer
 
 ## 2. Starting the supercontinuum source (for calibration)
 
-On scexao@scexso2 computer,  <br />
+On scexao@sc20 computer,  <br />
 `superk power on`
 
 Changing the intensity, 
@@ -111,7 +111,7 @@ Changing the intensity,
 
 ## 3. Checking the vis block
 
-On scexao@scexso2 computer,  <br />
+On scexao@sc20 computer,  <br />
 `vis_block status`
 
 Changing the status, 
@@ -120,7 +120,7 @@ Changing the status,
 
 ## 4. Flattening the DM (in case of issues)
 
-On the scexao@scexao6 computer:  
+On the scexao@sc20 computer:  
 `dmflat`
 
 To center the PSF of PALILA, use `Ctrl + Arrow Keys`.
@@ -129,7 +129,7 @@ To center the PSF of PALILA, use `Ctrl + Arrow Keys`.
 ## 5. Operation of the Calibration Unit
 
 ### 5.1 Pick off mirror
-On scexao2 computer, to know the status of the wavelength calibration unit pick off mirror: <br />
+On sc20 computer, to know the status of the wavelength calibration unit pick off mirror: <br />
 `first_pickoff status`
 
 To put the pick off mirror in: <br />
