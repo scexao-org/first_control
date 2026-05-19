@@ -90,7 +90,11 @@ Once the rolling mode is active, data can be acquired by setting up the fitslogg
 ```
 pls.acq.get_images_rolling(nimages = 150, ncubes = 1, tint = 0.05, readout_mode = 'FAST')
 ```
-readout_mode can also be set to 'SLOW'
+The parameters are as follows:
+- `nimages`: Number of DITs (ideally should be a factor of the sequence length)
+- `ncubes`: Number of cubes to acquire
+- `tint`: Integration time of the camera
+- `readout_mode`: 'SLOW' or 'FAST'
 
 
 ## Getting data in triggered mode
