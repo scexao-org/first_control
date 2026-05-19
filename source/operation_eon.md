@@ -13,7 +13,12 @@ Flats can be saved from the fircam_ctrl terminal with :
 pls.eon.save_flats()
 ```
 
-To do both, one after the other (before going to bed):
+Flats can be saved from the fircam_ctrl terminal with :
+```
+pls.eon.save_neons()
+```
+
+To do all three, one after the other (before going to bed):
 ```
 pls.eon.take_all_calibs()
 ```
