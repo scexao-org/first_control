@@ -82,11 +82,16 @@ To change the parameters on the camera:
 
 The rolling mode is activated using the following method:
 ```
-pls.acq.set_mode_rolling()
+pls.acq.set_mode_rolling(x=0,y=0,open_loop=False)
 ```
 The `x` and `y` coordinates correspond to the location of the tip/tilt. Most of the time, this should be set to 0 to keep the alignement performed with the zabers. The `open_loop` parameter determines whether the electronics actively controls the tip/tilt to stay centered on 0 (i.e. "closed loop" regime, or `open_loop = True`), or completely deactivates the control loop (`open_loop = True`). 
 
-Once the rolling mode is active, data can be acquired by setting up the fitslogger manually. 
+Once the rolling mode is active, data can be acquired by setting up the fitslogger manually. Or from command line:
+```
+pls.acq.get_images_rolling(nimages = 150, ncubes = 1, tint = 0.05, readout_mode = 'FAST')
+```
+readout_mode can also be set to 'SLOW'
+
 
 ## Getting data in triggered mode
 

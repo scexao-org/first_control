@@ -139,15 +139,15 @@ To put the pick off mirror in: <br />
 
 To put the pick off mirror out: <br />
 `first_pickoff out`
-also on the scexao2 computer
+also on the sc20 computer
 
 ### 5.2 Operation of the Halogen Lamp
 The Halogen lamp is powered by the SCExAO NPS number 2. <br />
 
-To power on the source from scexao2 computer : <br />
+To power on the source from sc20 computer : <br />
 `nps 2 5 on`
 
-To power off the source from scexao2 computer : <br />
+To power off the source from sc20 computer : <br />
 `nps 2 5 off`
 
 ### 5.3 Operation of the Neon source
