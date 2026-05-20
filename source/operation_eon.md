@@ -5,7 +5,7 @@
 
 Darks can be saved from the fircam_ctrl terminal with :
 ```
-pls.eon.save_darks(block_light_on_the_bench=True)
+pls.eon.save_darks()
 ```
 
 Flats can be saved from the fircam_ctrl terminal with :

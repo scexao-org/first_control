@@ -1,53 +1,3 @@
-# Aligning the lantern to the source
-
-## 1. Moving the photonic lantern manually with Zabers
-
-The Zaber motors move the lantern physically in the focal plane 
-
-Commands to check and set the Zaber position:
-- `zab.get_position()`: retrieve the (x, y) position of the zaber 
-- `zab.move(x, y)`: move the zaber to x, y absolute position
-- `zab.delta_move(dx, dy)`: perform a move of dx and dy relative to current position
-
-Note that all these commands take and return values in units of zaber steps. 
-
-## 2. Centering with a scan using the tip/tilt
-
-### 2.1 Modulation with the Tip-Tilt
-
-The tip/tilt mirror can be used to quickly acquire a 2D scan to locate the target and center the PL. A scan is obtained using:
-```
-pls.acq.get_acquisition_scan(wait_until_done = False, tint = 0.1, mod_scale = 200)
-```
-The `mod_scale` gives the size of the scan (in mas) and `tint` is the DIT time in seconds.
-
-This function will return immediately. Look at the fitslogger and fitsmerger terminals to know when the scan is done and the fits file is saved.
-
-### 2.2 Displaying the flux map
-
-To display the flux from the most recent FITS file and retrieve the x, y position of the star:
-```
-x_tt,y_tt = pls.ins.opti_flux()
-```
-
-### 2.3 Centering the photonic lantern
-
-To convert the tip/tilt x,y position retrieved from the flux map to zaber coordinates:
-```
-x_zab, y_zab = pls.geo.tt_to_zab(x_tt, y_tt)
-```
-
-This can be used to recenter the zaber to the correct position using a "delta_move":
-```
-zab.delta_move(-x_zab, -y_zab)
-```
-
-This process can be iterated until proper centering is achieved. There is also a dedicated method to automatically perform these steps:
-```
-pls.acq.center_PL(tint = 0.1, init_scale = 200, n_iterations = 2)
-```
-Each iteration will be a zoomed iteration centered on the best position from the previous iteration. The function also takes a verification scan at the end (for a total of n_iterations+1 scans).
-
 # Acquiring data
 
 ## Using wollaston or not
@@ -68,8 +18,8 @@ To change the parameters on the camera:
 - Check exposure time : `cam.get_tint()`
 - Change readout mode : `cam.set_readout_mode()` 
     - Options:
-        - 'FAST' : < 200 ms
-        - 'SLOW' : > 200 ms
+        - 'FAST' : < 500 ms
+        - 'SLOW' : > 500 ms
 - Change crop size : `cam.set_camera_mode`
     - Options:
         - 'FIRSTPL' : For the regular Photonic Lantern mode
@@ -171,3 +121,53 @@ ld.switch_tracking_offset(state = True)
 ```
 
 From there on, any offset in the `pls.acq.get_image` command should be given in RA/DEC (in mas) and will be automatically tracked. 
+
+# Aligning the lantern to the source
+
+## 1. Moving the photonic lantern manually with Zabers
+
+The Zaber motors move the lantern physically in the focal plane 
+
+Commands to check and set the Zaber position:
+- `zab.get_position()`: retrieve the (x, y) position of the zaber 
+- `zab.move(x, y)`: move the zaber to x, y absolute position
+- `zab.delta_move(dx, dy)`: perform a move of dx and dy relative to current position
+
+Note that all these commands take and return values in units of zaber steps. 
+
+## 2. Centering with a scan using the tip/tilt
+
+### 2.1 Modulation with the Tip-Tilt
+
+The tip/tilt mirror can be used to quickly acquire a 2D scan to locate the target and center the PL. A scan is obtained using:
+```
+pls.acq.get_acquisition_scan(wait_until_done = False, tint = 0.1, mod_scale = 200)
+```
+The `mod_scale` gives the size of the scan (in mas) and `tint` is the DIT time in seconds.
+
+This function will return immediately. Look at the fitslogger and fitsmerger terminals to know when the scan is done and the fits file is saved.
+
+### 2.2 Displaying the flux map
+
+To display the flux from the most recent FITS file and retrieve the x, y position of the star:
+```
+x_tt,y_tt = pls.ins.opti_flux()
+```
+
+### 2.3 Centering the photonic lantern
+
+To convert the tip/tilt x,y position retrieved from the flux map to zaber coordinates:
+```
+x_zab, y_zab = pls.geo.tt_to_zab(x_tt, y_tt)
+```
+
+This can be used to recenter the zaber to the correct position using a "delta_move":
+```
+zab.delta_move(-x_zab, -y_zab)
+```
+
+This process can be iterated until proper centering is achieved. There is also a dedicated method to automatically perform these steps:
+```
+pls.acq.center_PL(tint = 0.1, init_scale = 200, n_iterations = 2)
+```
+Each iteration will be a zoomed iteration centered on the best position from the previous iteration. The function also takes a verification scan at the end (for a total of n_iterations+1 scans).
