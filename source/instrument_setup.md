@@ -95,6 +95,8 @@ For that, see section "Operations"
 ```
 
 ## 1. Pick off mirror
+
+The pick off mirror for the lantern is called "selectable beam splitter" in the optical diagram above.
 On sc20 computer, to know the status of the pick off mirror: <br />
 `firstpl_pickoff status`
 
@@ -116,6 +118,7 @@ Changing the intensity,
 
 ## 3. Checking the vis block
 
+The blocking filter is inserted just after the WFS beamsplitter above.
 On scexao@sc20 computer,  <br />
 `vis_block status`
 
@@ -134,6 +137,9 @@ To center the PSF of PALILA, use `Ctrl + Arrow Keys`.
 ## 5. Operation of the Calibration Unit
 
 ### 5.1 Pick off mirror
+
+The pick off mirror of the calibration unit is inserted between the vis blocking filter and the selectable beam splitter.
+
 On sc20 computer, to know the status of the wavelength calibration unit pick off mirror: <br />
 `first_pickoff status`
 
