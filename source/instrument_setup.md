@@ -91,6 +91,9 @@ For that, see section "Operations"
 
 # Optical setup
 
+```{image} VisPhotonicLantern_2025.png
+```
+
 ## 1. Pick off mirror
 On sc20 computer, to know the status of the pick off mirror: <br />
 `firstpl_pickoff status`
