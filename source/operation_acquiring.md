@@ -134,6 +134,8 @@ This can be used to recenter the zaber to the correct position using a "delta_mo
 zab.delta_move(-x_zab, -y_zab)
 ```
 
+### 2.4 Iterating the centering
+
 This process can be iterated until proper centering is achieved. There is also a dedicated method to automatically perform these steps:
 ```
 pls.acq.center_PL(tint = 0.1, init_scale = 200, n_iterations = 2)
