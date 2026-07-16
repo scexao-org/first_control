@@ -65,6 +65,13 @@ with DATA_TYPE being one of the following list:
 - "STANDARD"
 - "TEST"
 
+## Flashing a new modulation sequence to the 
+
+Commands to modify the sequences patterns on the electronic:
+```
+xmod, ymod = pls.mod.triangle_modulation()
+scripts.upload_modulation_sequence(6,xmod,ymod)
+```
 
 # Old optimization procedure (using Zabers)
 

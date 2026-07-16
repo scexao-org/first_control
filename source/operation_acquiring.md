@@ -56,10 +56,10 @@ pls.acq.set_mode_triggered()
 
 Once the system is in triggered mode, data should be acquired only using the dedicated command:
 ```
-pls.acq.get_images(nimages = 150, ncubes = 1, tint = 0.1, mod_sequence = 2, mod_scale = 30, objX = 0 , objY = 0)
+pls.acq.get_images(nimages = 271, ncubes = 1, tint = 0.05, mod_sequence = 2, mod_scale = 40, objX = 0 , objY = 0)
 ```
 The parameters are as follows:
-- `nimages`: Number of DITs (ideally should be a factor of the sequence length)
+- `nimages`: Number of DITs (ideally should be a factor of the sequence length). Can be left blank to just be the number of modulation position
 - `ncubes`: Number of cubes to acquire
 - `tint`: Integration time of the camera
 - `mod_sequence`: See numbers above (must be between 1 and 10)
@@ -67,12 +67,12 @@ The parameters are as follows:
 
 The modulation patterns are defined from -1 to 1 mas and scaled using the `mod_scale` parameter. There are currently 10 patterns implemented:
 - **Number 1**: Fixed position at zero
-- **Number 2**: 150 points hexagonal
+- **Number 2**: 271 points hexagonal
 - **Number 3**: 595 points hexagonal
 - **Number 4**: 144 points rectangular
 - **Number 5**: 625 points rectangular
-- **Number 6**: 313 points hexagonal
-- **Number 7**: 19 points hexagonal
+- **Number 6**: 37 points hexagonal
+- **Number 7**: 127 points hexagonal
 - **Number 8**: 60 points crenels
 - **Number 9**: 188 points crenels
 - **Number 10**: 10 points circle
