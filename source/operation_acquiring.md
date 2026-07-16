@@ -3,7 +3,7 @@
 ## Using wollaston or not
 
 The command to move the wollaston in/out is :
-`first_pl_wollaston in/out`
+`firstpl_wollaston in/out`
 in the shell
 
 ## Rolling vs Triggered mode

@@ -173,5 +173,5 @@ To power off the source from sc20 computer : <br />
 ## 6. Insertion of the wollaston
 
 The command to move the wollaston in/out is :
-`first_pl_wollaston in/out`
+`firstpl_wollaston in/out`
 in the shell
