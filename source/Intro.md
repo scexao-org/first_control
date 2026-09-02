@@ -1,13 +1,13 @@
 #  FIRST-PL
 | University of Hawai'i | LIRA / Paris Observatory | Subaru Telescope |
 |:---------------------:|:-----------------:|:----------------:|
-| ![UH Logo](logo_uh.png) | ![Paris Obs Logo](logo_lira.png) | ![Subaru Logo](logo_subaru.png) |
+| ![UH Logo](_static/images/logo_uh.png) | ![Paris Obs Logo](_static/images/logo_lira.png) | ![Subaru Logo](_static/images/logo_subaru.png) |
 ### Fibered Imager foR a Single Telescope - Photonic Lantern
 ---
 
 The FIRST-PL instrument is a photonic device operating at visible wavelengths, installed on the SCExAO instrument on the 8m SUBARU telescope (Hawaii).
 
-![](FIRST-PL_drawing.png)
+![](_static/images/FIRST-PL_drawing.png)
 
 The instrument is based on a 'photonic lantern' component. In simplified terms, it is an integrated field spectrograph, providing information on both the spatial and wavelength distribution of the astronomical source.
 
@@ -28,4 +28,4 @@ Three modes are currently offered. In 30 minutes of observations, the following 
 | **High contrast off-axis imaging** | Broadband | 630-780 nm | 100 mas (inner working angle) | 1000 mas | 1000 | 6 mag |
 
 Performance decreases for fainter targets. The plot below shows the achievable astrometric accuracy and contrast dynamic range as a function of R magnitude. These results are based on a combination of analytical models and empirical measurements:
-![](astrometric_contrast_vs_Rmag.png)
+![](_static/images/astrometric_contrast_vs_Rmag.png)

@@ -3,32 +3,51 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to first_control's documentation!
-=========================================
+Welcome to FIRST-PL's documentation!
+=====================================
 
 **Contact:** Sébastien Vievard (vievard@naoj.org)
 
+This documentation is organized around the main observing workflow:
+
+* learn what FIRST-PL does and how the instrument is arranged;
+* prepare the SCExAO environment and start the control processes;
+* acquire, align, and track a target;
+* save and reduce the resulting data.
+
 .. toctree::
    :maxdepth: 2
-   :caption: Instrument presentation
+   :caption: Start here
    
    Intro
    instrument_principle
-   
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Procedures
-   
    instrument_setup
+   observing_procedure
+   instrument_performance
 
 .. toctree::
    :maxdepth: 2
-   :caption: Operating FIRST
+   :caption: Operate FIRST-PL
+   
+   operation_mainscript
+   operation_acquiring
+   operation_eon
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Work with data
    
    saving_images
+   image_reconstruction
+   pipeline_intro
+   pipeline_recipes
+   pipeline_utility_tools
 
-
+.. toctree::
+   :maxdepth: 2
+   :caption: Miscellaneous
+   
+   misc
 
 Indices and tables
 ==================

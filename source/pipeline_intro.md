@@ -6,7 +6,7 @@ The "runPL_*.py" scripts are designed to run sequentially, each handling a speci
 
 The user will give the files as arguments to each script. If no argument is given, the script will look for all files within the current directory. The script will automatically select relevant data based on the FITS keywords.
 
-![](overview.png) 
+![](_static/images/overview.png)
 
 > **Note**: For the most up-to-date information, see the [official README](https://github.com/scexao-org/first_pipeline/blob/main/README.md) in the repository.
 

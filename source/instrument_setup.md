@@ -91,7 +91,7 @@ For that, see section "Operations"
 
 # Optical setup
 
-```{image} VisPhotonicLantern_2025.png
+```{image} _static/images/VisPhotonicLantern_2025.png
 ```
 
 ## 1. Pick off mirror

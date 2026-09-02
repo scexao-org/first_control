@@ -7,7 +7,7 @@ Then, open the GUI : <br />
 `FPS_FILTSTRING_NAME="FITS" milk-fpsCTRL`
 
 The GUI looks like this:
-![](save_telemetry.png)
+![](_static/images/save_telemetry.png)
 
 
 To start the process : Shift+r <br />

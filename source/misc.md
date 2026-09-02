@@ -117,7 +117,7 @@ They should look like this :
 
 | On the bench          |  On-sky |
 :-------------------------:|:-------------------------:
-| ![](SK_processed.png)  |  ![](HIP84893_processed.png) |
+| ![](_static/images/SK_processed.png)  |  ![](_static/images/HIP84893_processed.png) |
 
 If the optimization is successful, the 2D gaussian fit will appear clearly on the coupling map image. If not, adjust the (x0,y0) corrdinates according to the coupling map shape (carreful, if the dark is bad, this process does not work properly).
 
@@ -130,7 +130,7 @@ If the optimization is successful, the 2D gaussian fit will appear clearly on th
 
 Below graph shows the on-axis, maximum and average injection efficiency of the Photonic Lantern, at 642 nm, for various focal ratios. The measurements were performed on the bench without any turbulence. The estimated Strehl ratio at 750 nm (from VAMPIRES) was about 90%.
 
-![](coupling_plot_corrected.png)
+![](_static/images/coupling_plot_corrected.png)
 
 *Figure 3 : Variation of the injection effciency measured at 642 nm as a function of the focal ratio (bottom horizontal axis), or as a function of the ratio between the PSF size and MFD of the PL (top horizonal axis). For each focal ratio experimentally tested, we represent the on-axis injection efficiency, the maximum efficiency and the average over the whole scanned area. The field of view projected on-sky is also plotted with red crosses (right axis).*
 
@@ -145,7 +145,7 @@ To assess the injection efficiency into the PL in the presence of uncorrected at
 
 The injection module focal ratio was set to f/8. Results are shown on the below graph.
 
-![](PL_turbulence_test_paper_final.png)
+![](_static/images/PL_turbulence_test_paper_final.png)
 
 *Figure 4 : Relationship between the injection efficiency at 642 nm and the Strehl ratio measured at 750 nm for various atmospheric conditions. The turbulence is applied on the SCExAO DM and the flux is recorded at the 19-port PL output. The presented SMF results are simulations from Lin et al. (2021), where the simulated turbulence screens were following the Kolmogorov power spectrum.*
 
@@ -171,5 +171,5 @@ The project is the result of a collaboration between the University of Hawai'i, 
 
 | University of Hawai'i | LIRA / Paris Observatory | Subaru Telescope |
 |:---------------------:|:-----------------:|:----------------:|
-| ![UH Logo](logo_uh.png) | ![Paris Obs Logo](logo_lira.png) | ![Subaru Logo](logo_subaru.png) |
+| ![UH Logo](_static/images/logo_uh.png) | ![Paris Obs Logo](_static/images/logo_lira.png) | ![Subaru Logo](_static/images/logo_subaru.png) |
 

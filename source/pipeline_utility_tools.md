@@ -29,7 +29,7 @@ You can go to the data directory directly with the command `cd $DETDATA`
 ## runPL_dfits
 
 It shows the most important parameters of header:
-![](FIRST-PL_dfits.png)
+![](_static/images/FIRST-PL_dfits.png)
 
 Note that it needs dfits to be installed. It can be found there:
 https://github.com/granttremblay/eso_fits_tools

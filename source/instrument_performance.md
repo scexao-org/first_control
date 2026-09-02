@@ -5,7 +5,7 @@
 Observations of Altair during S24B allowed us to estimate the injection efficiency of the PL with the newly installed AO3k - NIRPyWFS. 
 We present here the results in the form of histograms representing the injection efficiency and total throughput of the instrument (throughput from top of the atmosphere down to the detector) computed on the Altair data at two wavelengths (642nm and 680nm) : 
 
-```{image} 20240726Altair_throughput_combined2025.png
+```{image} _static/images/20240726Altair_throughput_combined2025.png
 :width: 800 px
 ```
 *On-sky total throughput and injection efficiency performance at 642 nm (top) and 680 nm (bottom)*
@@ -31,7 +31,7 @@ Spectro-astrometry enables the measurement of photocenter positions as a functio
 Recent observations of the β CMi decretion disk (Kim et al 2025) demonstrate the operational capabilities of this mode. Figure 7 shows the measured photocenter positions as a function of wavelength across the Hα line, while the right panels decompose this signal along the disk's major and minor axes.
 
 
-```{image} spectroastroprecision.png
+```{image} _static/images/spectroastroprecision.png
 :width: 800 px
 ```
 *Spectroastrometry of β-CMi, a classical Be star with an Hα decretion disk, done with the 19-port PL feeding the R~3,000 spectrograph. (Left) Photocenter position as a function of wavelength (velocity). (Right) Spectroastrometric signatures along the disk major axis (top) and minor axis (bottom). Credit: Kim et al., 2025*
