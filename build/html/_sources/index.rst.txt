@@ -19,6 +19,7 @@ This documentation is organized around the main observing workflow:
    :maxdepth: 2
    :caption: Start here
    
+   quick_start
    Intro
    instrument_principle
    instrument_setup
@@ -29,6 +30,7 @@ This documentation is organized around the main observing workflow:
    :maxdepth: 2
    :caption: Operate FIRST-PL
    
+   command_reference
    operation_mainscript
    operation_acquiring
    operation_eon
@@ -47,6 +49,7 @@ This documentation is organized around the main observing workflow:
    :maxdepth: 2
    :caption: Miscellaneous
    
+   troubleshooting
    misc
 
 Indices and tables

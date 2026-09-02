@@ -84,18 +84,18 @@ first_pl_inj x goto 98500
 first_pl_inj y goto 166500
 ```
 
-### 1. Start the process of flux recording
+## 1. Start the process of flux recording
 In  /home/first/src/firstctrl/FIRST_photom_control/ run :  <br />
 `python first_pl_flux.py`
 
-### 2. Optimization
+## 2. Optimization
 In  /home/first/src/firstctrl/FIRST_photom_control/ run :<br />
 `ipython`  <br />
 `run first_pl_optimization_injection_iocam.py`<br />
 And then :<br />
 `pl_inj.whatyouwant`  <br />
 
-#### 2.1 Take a dark
+### 2.1 Take a dark
 `pl_inj.acq_dark()`
 - Option :
     - `vis_block = True/False` (adding the vis block in/out during dark measurement - check with VAMPIRES instrument when using this block)
@@ -126,7 +126,7 @@ If the optimization is successful, the 2D gaussian fit will appear clearly on th
 
 ## Injection efficiency
 
-### Injection efficiency versus focal ratio
+## Injection efficiency versus focal ratio
 
 Below graph shows the on-axis, maximum and average injection efficiency of the Photonic Lantern, at 642 nm, for various focal ratios. The measurements were performed on the bench without any turbulence. The estimated Strehl ratio at 750 nm (from VAMPIRES) was about 90%.
 
@@ -136,7 +136,7 @@ Below graph shows the on-axis, maximum and average injection efficiency of the P
 
 The optimal injection efficiency was recorded for a focal ratio of 8. The current default setup of the Photonic Lantern injection module is f/8.
 
-### Injection efficiency versus Strehl Ratio
+## Injection efficiency versus Strehl Ratio
 
 To assess the injection efficiency into the PL in the presence of uncorrected atmospheric turbulence, turbulence is injected onto the SCExAO DM with various levels of upstream atmospheric turbulence correction. Turbulence screens are based on Kolmogorov spectrum with inner and outer scales, adopting the frozen flow approximation for temporal evolution, and are the closest to what we expect during on-sky observations. We fixed the wind speed at 10 m/s and modified the turbulence amplitude to vary the Strehl ratio. In order to study the behavior of the PL in various conditions, we varied the spatial frequency content of the simulated turbulence. We identified three distinct cases by adjusting the inner and outer scales of the turbulence:
 - Turbulence following the Kolmogorov power spectrum (inner scale = 0.01 meter, outer scale = 20 meters), the closest to what we expect on-sky

@@ -75,6 +75,10 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+source/_build/
+
+# macOS metadata
+.DS_Store
 
 # PyBuilder
 .pybuilder/
