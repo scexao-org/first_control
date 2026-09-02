@@ -26,12 +26,11 @@ From there, several objects are defined, which can be used to execute basic comm
 - `ld` is the lantern driver and contains all the basic commands that can be sent to the electronics.
 - `scripts` contains the scripts for the electronics (i.e. sequences of commands for the electronics only).
 - `pls` stands for photonic lantern scripts and contains the high-level scripts that interacts with all the elements (i.e. camera, fitslogger, electronics, zabers).
-- `pls.focal` is used to control the focal plan camera and the mirror to inject into it
+- `pls.focal` is used to control the focal plan camera and the mirror to inject into it (it is deprecated)
 - `zab` is used to control the zabers that move the photonic lantern.
 
 To exit the controller, run:
-- `stop()` to stop the different processes and disconnects from the ZMQ ports
-- `exit` to leave the ipython terminal
+- `exit()` to leave the ipython terminal
 
 ### Initialize the instrument
 
