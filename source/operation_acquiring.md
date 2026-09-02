@@ -1,17 +1,10 @@
 
 
-# Operating FIRST-PL
-
-Use this page during an observing run in the following order:
-
-1. Start the controller and initialize the electronics.
-2. Configure the camera and choose rolling or triggered acquisition.
-3. Acquire data, then align the lantern if needed.
-4. Synchronize the target and enable tracking for off-axis observations.
+# Operation with main FIRST-PL python script
 
 ## 1. Start the control software
 
-## Summary
+### Summary
 
 All operations are done with a python script that is lauched using the command:
 ```
@@ -19,7 +12,7 @@ firstpl_controller_start
 ```
 ideally launched in a tmux terminal
 
-## Launching from the tmux
+### Launching from the tmux
 
 Again, it is highly suggested to start the controller in its own tmux session. This is particularly useful as it allows to control the instrument from an ssh terminal, bypassing the VNC and its sometimes laggy connection.
 - `tmux new -s fircam_ctrl` to create the tmux session if it does not exist

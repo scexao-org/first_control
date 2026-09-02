@@ -26,7 +26,7 @@ This documentation is organized around the main observing workflow:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Setting up FIRST-PL
+   :caption: Setup FIRST-PL
 
    instrument_setup
 
@@ -35,8 +35,6 @@ This documentation is organized around the main observing workflow:
    :caption: Operate FIRST-PL
    
    quick_start
-   command_reference
-   operation_mainscript
    operation_acquiring
    operation_eon
 
