@@ -1,22 +1,3 @@
-# Troubleshooting
-
-## Camera frozen
-
-If the camera viewer freezes, you can first check whether it is running or not by :  <br />
-- Check the streams activity using `milk-streamCTRL`
-- Checkng the `firstpl_fgrab` tmux session.
-
-If both show that the camera is not running, try restarting the control software `firstpl_controller_start`. <br />
-
-If the camera is still not running, powercycle it. From a scexao2 termnial, power cycle issuing the following : <br />
-`nps 2 7 off` (wait a few seconds)
-`nps 2 7 on`
-
-Wait a few seconds, and restart the control software `firstpl_controller_start`.
-
-
-
-
 # Additional how-to
 
 ## SHM Stream control 
