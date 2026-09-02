@@ -1,4 +1,4 @@
-# Quick start
+# Quick player aid
 
 Use this checklist for a normal observing sequence. For explanations and edge cases, see [Operating FIRST-PL](operation_acquiring.md).
 
@@ -36,7 +36,24 @@ or:
 pls.acq.set_mode_triggered()
 ```
 
-## 3. Acquire data
+## 3. Check alignment
+
+Run a scan and inspect the flux position (camera should be in triggered mode):
+
+```python
+pls.acq.get_acquisition_scan(wait_until_done = True, tint = 0.1, mod_scale = 200)
+x_tt, y_tt = pls.ins.opti_flux()
+x_zab, y_zab = pls.geo.tt_to_zab(x_tt, y_tt)
+zab.delta_move(-x_zab, -y_zab)
+```
+
+or, the all in one function:
+
+```python
+pls.acq.center_PL(tint = 0.1, init_scale = 200, n_iterations = 2)
+```
+
+## 4. Acquire data
 
 For rolling mode:
 
@@ -47,17 +64,7 @@ pls.acq.get_images_rolling(nimages=150, ncubes=1, tint=0.05, readout_mode='FAST'
 For triggered mode:
 
 ```python
-pls.acq.get_images(nimages=271, ncubes=1, tint=0.05, mod_sequence=2, mod_scale=40, objX=0, objY=0)
-```
-
-## 4. Check alignment
-
-Run a scan and inspect the flux position:
-
-```python
-x_tt, y_tt = pls.ins.opti_flux()
-x_zab, y_zab = pls.geo.tt_to_zab(x_tt, y_tt)
-zab.delta_move(-x_zab, -y_zab)
+pls.acq.get_images(ncubes=1, tint=0.05, mod_sequence=2, mod_scale=40, objX=0, objY=0)
 ```
 
 ## 5. Save and close

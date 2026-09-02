@@ -13,7 +13,7 @@ Flats can be saved from the fircam_ctrl terminal with :
 pls.eon.save_flats()
 ```
 
-Flats can be saved from the fircam_ctrl terminal with :
+Wavelength calibration files (approx 10 minutes) can be saved from the fircam_ctrl terminal with :
 ```
 pls.eon.save_neons()
 ```
