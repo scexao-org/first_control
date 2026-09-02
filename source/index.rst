@@ -19,16 +19,16 @@ This documentation is organized around the main observing workflow:
    :maxdepth: 2
    :caption: FIRST-PL
    
-   Intro
+   intro
    instrument_principle
+   observing_procedure
+   instrument_performance
 
 .. toctree::
    :maxdepth: 2
    :caption: Setting up FIRST-PL
 
    instrument_setup
-   observing_procedure
-   instrument_performance
 
 .. toctree::
    :maxdepth: 2

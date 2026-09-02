@@ -168,8 +168,6 @@ To power on the source from sc20 computer : <br />
 To power off the source from sc20 computer : <br />
 `firstpl_neon_power off`
 
-
-
 ## 6. Insertion of the wollaston
 
 The command to move the wollaston in/out is :
