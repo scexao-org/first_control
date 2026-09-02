@@ -79,21 +79,6 @@ The lantern can be operated in two distinct modes: rolling and triggered. Data a
 1. Rolling mode: the camera is triggered internally and nevers stops. The electronics sets the tip/tilt to a fixed position. Data are acquired using the fitslogger manually.
 2. Triggered mode: the camera is set to external trigger, and the electronics controls the tip/tilt to move the target at each new frame acquired by the camera. Data should only be acquired using the dedicated methods in the control terminal, and not by direct interaction with the fits logger.  
 
-To change the parameters on the camera:
-- Change exposure time : `cam.set_tint()`
-- Check exposure time : `cam.get_tint()`
-- Change readout mode : `cam.set_readout_mode()` 
-    - Options:
-        - 'FAST' : < 500 ms
-        - 'SLOW' : > 500 ms
-- Change crop size : `cam.set_camera_mode`
-    - Options:
-        - 'FIRSTPL' : For the regular Photonic Lantern mode
-        - 'FIRSTPLWFS' : For the Wavefront sensing mode
-        - 'FIRSTPLSMF' : For imaging of the SMF
-        - 'FULL' : Full frame
-
-
 ## 3. Acquire data
 
 ### Rolling mode
@@ -124,7 +109,7 @@ pls.acq.set_mode_triggered()
 
 Once the system is in triggered mode, data should be acquired only using the dedicated command:
 ```
-pls.acq.get_images(nimages = 271, ncubes = 1, tint = 0.05, mod_sequence = 2, mod_scale = 40, objX = 0 , objY = 0)
+pls.acq.get_images(ncubes = 1, tint = 0.05, mod_sequence = 2, mod_scale = 40, objX = 0 , objY = 0)
 ```
 The parameters are as follows:
 - `nimages`: Number of DITs (ideally should be a factor of the sequence length). Can be left blank to just be the number of modulation position
@@ -132,6 +117,7 @@ The parameters are as follows:
 - `tint`: Integration time of the camera
 - `mod_sequence`: See numbers above (must be between 1 and 10)
 - `mod_scale`: the radius of the modulation pattern (in mas)
+- `objX` and `objY` : pointing position (center of modulation in RA, DEC). Can be a list for simultaneous observation at different positions.
 
 The modulation patterns are defined from -1 to 1 mas and scaled using the `mod_scale` parameter. There are currently 10 patterns implemented:
 - **Number 1**: Fixed position at zero
@@ -149,11 +135,9 @@ The modulation patterns corresponding to the sequence numbers above are shown be
 
 ![](_static/images/modulation_sequences.png)
 
-Modulation typical scales:
+Typical modulation scales:
 - **Lantern modulation**: Scale = 30, sampled at 16 units
 - **Piezo modulation**: Scale = 1000, using sequence number 5 (length = 25)
-
-
 
 
 ## 4. Align the lantern to the source
