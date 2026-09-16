@@ -47,6 +47,40 @@ FPS_FILTSTRING_NAME="FITS" milk-fpsCTRL
 
 In the FITS logger, use `Shift+r` to start recording and `Ctrl+r` to stop it. Confirm that the output directory contains the new FITS file before proceeding.
 
+## Waiting for FIFO never resolves
+
+If you see:
+
+```text
+waiting for fifo "/milk/shm/milkFITSlogger.fifo" ........................
+```
+
+and the process remains stuck without producing any output, the FITS logger `tmux` sessions are likely hung and interconnected.
+
+There are usually two of them:
+
+```text
+(base) first@kamua:~$ tmux list-sessions | grep FITS
+milkFITSlogger: 1 windows (created Wed Sep 16 20:10:48 2026)
+streamFITSlog-firstpl: 3 windows (created Wed Sep 16 20:10:48 2026)
+```
+
+To recover, attach to each session and exit repeatedly until the hung windows close:
+
+```text
+tmux a -t streamFITSlog-firstpl
+tmux a -t milkFITSlogger
+```
+
+Then, inside each session, type:
+
+```text
+exit
+```
+
+Repeat as needed until the sessions clear.
+
+
 ## Electronics initialization fails
 
 From the controller terminal, rerun the startup methods:
