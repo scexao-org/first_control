@@ -120,16 +120,19 @@ The parameters are as follows:
 - `objX` and `objY` : pointing position (center of modulation in RA, DEC). Can be a list for simultaneous observation at different positions.
 
 The modulation patterns are defined from -1 to 1 mas and scaled using the `mod_scale` parameter. There are currently 10 patterns implemented:
-- **Number 1**: Fixed position at zero
-- **Number 2**: 271 points pyramidals
-- **Number 3**: 595 points hexagonal
-- **Number 4**: 144 points rectangular
-- **Number 5**: 625 points rectangular
-- **Number 6**: 37 points pyramidals
-- **Number 7**: 127 points pyramidals
-- **Number 8**: 60 points crenels
-- **Number 9**: 188 points crenels
-- **Number 10**: Reserved for off-axis pointing
+
+| Number | Pattern | Numbers of points |
+|---:|---|
+| 1 | Fixed position at zero | 1 |
+| 2 | Pyramidals | 271 |
+| 3 | Hexagonal | 595 |
+| 4 | Rectangular | 144 |
+| 5 | Rectangular | 625 |
+| 6 | Pyramidals | 37 |
+| 7 | Pyramidals | 127 |
+| 8 | Crenels | 60 |
+| 9 | Crenels | 188 |
+| 10 | Reserved for off-axis pointing | — |
 
 The modulation patterns corresponding to the sequence numbers above are shown below:
 
