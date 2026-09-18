@@ -77,7 +77,7 @@ The `mod_sequence` parameter selects the modulation pattern used during acquisit
 
 ### 5. A quick wavelength calibration
 
-It will take 20 minutes of your night time, but it could be interesting to make sure spectral calibration is right.
+It will take 10 minutes of your night time, but it could be interesting to make sure spectral calibration is right.
 
 ```python
 pls.eon.save_neons(quick=True)
