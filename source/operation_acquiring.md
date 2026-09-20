@@ -121,8 +121,8 @@ The parameters are as follows:
 
 The modulation patterns are defined from -1 to 1 mas and scaled using the `mod_scale` parameter. There are currently 10 patterns implemented:
 
-| Number | Pattern | Numbers of points |
-|---:|---|
+| Number | Pattern | Number of points |
+|---:|---|---:|
 | 1 | Fixed position at zero | 1 |
 | 2 | Pyramidals | 271 |
 | 3 | Hexagonal | 595 |
