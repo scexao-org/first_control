@@ -40,10 +40,8 @@ This documentation is organized around the main observing workflow:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Work with data
+   :caption: Pipeline
    
-   saving_images
-   image_reconstruction
    pipeline_intro
    pipeline_recipes
    pipeline_utility_tools

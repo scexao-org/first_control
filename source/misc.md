@@ -1,5 +1,16 @@
 # Additional how-to
 
+## Saving data manually through the fitsloger
+
+We can also use the fits logger to record the data. You can see how to set it up in [Instrument Setup](instrument_setup.md).
+
+The GUI looks like this:
+![](_static/images/save_telemetry.png)
+
+
+To start the process : Shift+r <br />
+To stop the process : Ctrl+r <br /> 
+
 ## SHM Stream control 
 
 milk-streamCTRL                                                     # Shows the various shared memories running (or not :p) 

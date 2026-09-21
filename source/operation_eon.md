@@ -26,14 +26,17 @@ pls.eon.take_all_calibs()
 These codes will look for every parameters of readout mode and exposition time saved during the night and take darks/flats with the corresponding parameters. The exposition time of the flats are set independently.
 
 
-Alternatively, darks/flats with set parameters can be saved with :
+Alternatively, darks with set parameters can be saved with :
 ```
-pls.eon.save_single_dark(detmod = {str, readout mode value to use}, exptime = {float, exposition time to use}, block_light_on_the_bench=True)
+pls.eon.save_single_dark(detmod = {str, readout mode value to use}, num_cubes = {int, number of cubes to be taken}, exptime = {float, exposition time to use}, triggered_keyword = {str, triggered camera or not}, block_light_on_the_bench=True)
 ```
-```
-pls.eon.save_single_flat(detmod = {str, readout mode value to use}, exptime = {float, exposition time to use})
-```
+detmod is either 'SLOW' or 'FAST', triggered_keyword is either 'INT' or 'EXT.
 Note : block_light_on_the_bench is False by default, setting it to true will block light on other instruments.
+
+And flats with set parameters can be saved with :
+```
+pls.eon.save_single_flat(detmod = {str, readout mode value to use}, exptime = {float, exposition time to use}, num_frames={int, number of frames per cubes}, num_cubes={int, number of cubes to be taken})
+```
 
 
 ## Don't forget
